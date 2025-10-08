@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcrb13ee8kh3j"]
+
+[ext_resource type="PackedScene" uid="uid://dm2mo65bfrqf1" path="res://models/items/Comida low poly/Comida low poly.dae" id="1_us6qm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Comida low poly" parent="." instance=ExtResource("1_us6qm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352619, 0, 0.25357676)
+
+[editable path="Comida low poly"]

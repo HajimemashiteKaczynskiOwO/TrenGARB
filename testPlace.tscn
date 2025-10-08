@@ -1,0 +1,263 @@
+[gd_scene load_steps=7 format=3 uid="uid://efn0gef0jwf8"]
+
+[ext_resource type="PackedScene" uid="uid://cnitupcqicu2t" path="res://models/people/Personajes/Characters/Characters.fbx" id="1_i104o"]
+[ext_resource type="PackedScene" uid="uid://k51jbhhqbtu1" path="res://animations/Walking(1).fbx" id="2_6ib74"]
+
+[sub_resource type="Animation" id="Animation_g2e3i"]
+resource_name = "mixamo_com"
+length = 0.033333335
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:mixamorig_Hips")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.00028862484, 5.2533417, 0.1371593)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton3D:mixamorig_Hips")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.00029549183, 0.70709753, 0.00029509357, 0.7071159)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton3D:mixamorig_Spine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.000416459, 5.349929e-05, -0.09671332, 0.9953122)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton3D:mixamorig_LeftUpLeg")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.00017360956, -0.01361954, -0.9999055, -0.0018437715)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton3D:mixamorig_RightUpLeg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.00024715438, 0.014435742, -0.99988323, -0.0050022)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton3D:mixamorig_LeftLeg")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.03061196, 0.0021315636, 0.0376949, 0.99881804)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("Skeleton3D:mixamorig_RightLeg")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 0.03057742, -0.0024524294, 0.044415265, 0.9985421)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("Skeleton3D:mixamorig_LeftFoot")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0.38941842, 0.5931958, -0.35074368, 0.61110634)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("Skeleton3D:mixamorig_RightFoot")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.35221517, -0.61055666, 0.3908764, -0.5919296)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("Skeleton3D:mixamorig_LeftShoulder")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0.75201774, 0.005336639, -0.009855443, 0.65904754)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("Skeleton3D:mixamorig_RightShoulder")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.013966901, -0.65970105, 0.751358, -0.0077903294)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = true
+tracks/11/enabled = true
+tracks/11/path = NodePath("Skeleton3D:mixamorig_LeftArm")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, -0.06592463, 0.021391269, 0.009541673, 0.99754965)
+tracks/12/type = "rotation_3d"
+tracks/12/imported = true
+tracks/12/enabled = true
+tracks/12/path = NodePath("Skeleton3D:mixamorig_RightArm")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -0.06507837, -0.022396293, -0.014210963, 0.9975276)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = true
+tracks/13/enabled = true
+tracks/13/path = NodePath("Skeleton3D:mixamorig_LeftForeArm")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, -1.3178776e-07, 0.009795597, -4.5897593e-07, 0.999952)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = true
+tracks/14/enabled = true
+tracks/14/path = NodePath("Skeleton3D:mixamorig_RightForeArm")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -1.1952264e-07, -0.009293961, 4.0031412e-07, 0.9999568)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = true
+tracks/15/enabled = true
+tracks/15/path = NodePath("Skeleton3D:mixamorig_LeftHand")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, -6.428765e-08, -0.894645, 4.2022094e-08, -0.44677782)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = true
+tracks/16/enabled = true
+tracks/16/path = NodePath("Skeleton3D:mixamorig_RightHand")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -6.469115e-08, -0.9123285, -2.353302e-07, 0.40945905)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = true
+tracks/17/enabled = true
+tracks/17/path = NodePath("Skeleton3D:mixamorig_LeftHandIndex1")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 1.4662629e-07, 5.266916e-05, -1.0851934e-07, 1)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = true
+tracks/18/enabled = true
+tracks/18/path = NodePath("Skeleton3D:mixamorig_RightHandIndex1")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, -4.684051e-08, 8.290501e-05, -4.034249e-07, 1)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = true
+tracks/19/enabled = true
+tracks/19/path = NodePath("Skeleton3D:mixamorig_LeftHandIndex2")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, 0.015633224, -9.9434835e-08, -0.010987795, 0.99981743)
+tracks/20/type = "rotation_3d"
+tracks/20/imported = true
+tracks/20/enabled = true
+tracks/20/path = NodePath("Skeleton3D:mixamorig_RightHandIndex2")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, 0.044104196, -4.5190167e-09, 0.0062069194, 0.99900764)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = true
+tracks/21/enabled = true
+tracks/21/path = NodePath("Skeleton3D:mixamorig_LeftHandIndex3")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 0.17457895, 0.006633714, 0.089348935, 0.9805585)
+tracks/22/type = "rotation_3d"
+tracks/22/imported = true
+tracks/22/enabled = true
+tracks/22/path = NodePath("Skeleton3D:mixamorig_RightHandIndex3")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, 0.130319, -0.009165658, -0.08525982, 0.9877569)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xij6p"]
+_data = {
+&"mixamo_com": SubResource("Animation_g2e3i")
+}
+
+[sub_resource type="Animation" id="Animation_4vwk4"]
+resource_name = "walk"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D/Characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m27fc"]
+_data = {
+&"walk": SubResource("Animation_4vwk4")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Characters" parent="." instance=ExtResource("1_i104o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5109334, -1.1920929e-07, 1.0187428)
+
+[node name="Skeleton3D" parent="Characters" index="0"]
+bones/0/position = Vector3(-0.0002886206, 5.2533417, 0.1371593)
+bones/0/rotation = Quaternion(-0.00029549183, 0.70709753, 0.00029509357, 0.7071159)
+bones/1/rotation = Quaternion(0.00041645893, 5.3499287e-05, -0.09671331, 0.99531215)
+bones/4/rotation = Quaternion(-0.025, 0.055, 0.097, 0.995)
+bones/7/rotation = Quaternion(0.7520177, 0.005336637, -0.009855442, 0.65904754)
+bones/8/rotation = Quaternion(-0.06592463, 0.02139127, 0.009541669, 0.9975497)
+bones/9/rotation = Quaternion(-1.3085925e-07, 0.009795597, -4.5105116e-07, 0.999952)
+bones/10/rotation = Quaternion(6.861926e-08, 0.894645, -5.9604645e-08, 0.4467778)
+bones/11/rotation = Quaternion(1.4704692e-07, 5.266916e-05, -1.08519316e-07, 1)
+bones/12/rotation = Quaternion(0.015633224, -9.9434835e-08, -0.010987795, 0.99981743)
+bones/13/rotation = Quaternion(0.17457895, 0.006633714, 0.089348935, 0.9805585)
+bones/15/rotation = Quaternion(-0.013966903, -0.65970105, 0.75135803, -0.00779033)
+bones/16/rotation = Quaternion(-0.065078355, -0.022396293, -0.014210962, 0.99752754)
+bones/17/rotation = Quaternion(-1.2201829e-07, -0.009293962, 3.9266894e-07, 0.9999569)
+bones/18/rotation = Quaternion(6.320958e-08, 0.91232854, 2.5331974e-07, -0.40945908)
+bones/19/rotation = Quaternion(-4.5786813e-08, 8.290501e-05, -4.034502e-07, 1)
+bones/20/rotation = Quaternion(0.044104196, -4.5190167e-09, 0.0062069194, 0.99900764)
+bones/21/rotation = Quaternion(0.130319, -0.009165658, -0.08525982, 0.9877569)
+bones/23/rotation = Quaternion(0.00017360957, 0.013619541, 0.9999055, 0.0018437714)
+bones/24/rotation = Quaternion(-0.030611964, 0.0021315638, 0.037694905, 0.9988181)
+bones/25/rotation = Quaternion(0.38941842, 0.59319574, -0.35074368, 0.61110634)
+bones/28/rotation = Quaternion(-0.00024715447, -0.014435743, 0.99988335, 0.0050022)
+bones/29/rotation = Quaternion(0.03057742, -0.0024524296, 0.044415265, 0.9985421)
+bones/30/rotation = Quaternion(0.3522152, 0.61055666, -0.39087647, 0.5919297)
+
+[node name="AnimationPlayer" parent="Characters" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_xij6p"),
+&"mixWalk": SubResource("AnimationLibrary_m27fc")
+}
+
+[node name="Walking(1)" parent="." instance=ExtResource("2_6ib74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.385588, 0, -6.1697097)
+
+[node name="Skeleton3D" parent="Walking(1)" index="0"]
+bones/0/position = Vector3(0.02669464, 5.180869, 0.10601961)
+bones/0/rotation = Quaternion(0.01684324, 0.76486963, -0.02390493, 0.643521)
+bones/1/rotation = Quaternion(-0.017476385, -0.0071696797, -0.06694711, 0.9975778)
+bones/2/rotation = Quaternion(-0.0034159257, -0.020932134, 0.014301502, 0.99967283)
+bones/3/rotation = Quaternion(0.0008808417, -0.020040903, -0.025550041, 0.99947226)
+bones/4/rotation = Quaternion(0.009175124, -0.009510948, 0.060267806, 0.9980948)
+bones/5/rotation = Quaternion(-0.003100177, -0.033483043, -0.011859466, 0.99936414)
+bones/7/rotation = Quaternion(0.7608379, -0.06088967, 0.16947323, 0.62345576)
+bones/8/rotation = Quaternion(0.54124504, -0.0033082403, -0.13277856, 0.8303088)
+bones/9/rotation = Quaternion(0.043996796, 0.011847479, 0.3084259, 0.9501565)
+bones/10/rotation = Quaternion(0.0038077943, 0.17939158, 0.17922367, 0.96730715)
+bones/11/rotation = Quaternion(-0.03752415, 0.003953061, -0.02706697, 0.99892133)
+bones/12/rotation = Quaternion(0.023695478, 0.010865442, -0.08658264, 0.99590355)
+bones/13/rotation = Quaternion(0.15469375, 0.075408936, -0.21173474, 0.962056)
+bones/15/rotation = Quaternion(0.01116375, -0.60613096, 0.79505265, 0.0192887)
+bones/16/rotation = Quaternion(0.48739266, -0.14183463, 0.23048756, 0.8301849)
+bones/17/rotation = Quaternion(0.039838854, -0.012026519, -0.27712035, 0.9599337)
+bones/18/rotation = Quaternion(0.05714582, -0.24139887, -0.057521023, 0.9670328)
+bones/19/rotation = Quaternion(0.09412916, 0.007323719, 0.00075413083, 0.99553275)
+bones/20/rotation = Quaternion(0.21284258, -0.0051732864, 0.07584374, 0.9741247)
+bones/21/rotation = Quaternion(0.17824021, -0.036942974, 0.18190783, 0.96632046)
+bones/23/rotation = Quaternion(0.0061818953, 0.034241, 0.9859621, 0.16330354)
+bones/24/rotation = Quaternion(0.037087314, 0.01792579, 0.53950876, 0.8409718)
+bones/25/rotation = Quaternion(0.38198465, 0.5844327, -0.36470702, 0.61604786)
+bones/26/rotation = Quaternion(0.29224682, -0.1627793, 0.022495156, 0.94211924)
+bones/28/rotation = Quaternion(-0.10145178, 0.06835708, 0.9920202, 0.030508414)
+bones/29/rotation = Quaternion(0.01806055, -0.020553852, 0.08793135, 0.9957507)
+bones/30/rotation = Quaternion(0.32566744, 0.6116921, -0.44477242, 0.5674074)
+bones/31/rotation = Quaternion(0.28322196, 0.12923503, -0.03134045, 0.94979024)
+
+[editable path="Characters"]
+[editable path="Walking(1)"]
