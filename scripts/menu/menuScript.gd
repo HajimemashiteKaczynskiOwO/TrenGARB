@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var menu = $menu
 @onready var crosshair = $crossHair
+@onready var timer_node: Node = $"../TimerNode"  # adjust path to your Timer Node
+@onready var time_label: Label = $TimeLabel     # your TimeLabel node
 
 func _input(event):
 	if event.is_action_pressed("menu"):
@@ -31,7 +33,8 @@ func _on_quit_2_button_pressed():
 # TIME PLACE
 
 @onready var progress_bar: ProgressBar = $ProgressBar
-@onready var time_label: Label = $TimeLabel
+
 
 func _process(delta: float) -> void:
-	time_label.text = globScript.get_game_time()
+	if timer_node and timer_node.has_method("get_game_time"):
+		time_label.text = timer_node.get_game_time()

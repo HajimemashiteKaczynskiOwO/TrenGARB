@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpt3t68l5dxqp"]
+
+[ext_resource type="PackedScene" uid="uid://cp13784l076tk" path="res://models/moser/Base Humanoid Mesh/Injured Idle.fbx" id="1_uygdn"]
+[ext_resource type="PackedScene" uid="uid://bohqcuy8sugs6" path="res://models/moser/Base Humanoid Mesh/1_Humanoid.fbx" id="2_6xs7v"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Injured Idle" parent="." instance=ExtResource("1_uygdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063223585, 0, -0.027045624)
+
+[node name="Skeleton3D" parent="Injured Idle" index="0"]
+bones/0/position = Vector3(0.039645195, 0.9836332, 0.016251711)
+bones/0/rotation = Quaternion(0.036726013, -0.023905292, 0.0062337164, 0.99902)
+bones/1/rotation = Quaternion(0.05860914, 0.021174524, 0.035910238, 0.9974102)
+bones/2/rotation = Quaternion(0.05884344, 0.008971686, 0.014738931, 0.99811816)
+bones/3/rotation = Quaternion(0.058843523, 0.0087730205, 0.015442378, 0.9981092)
+bones/4/rotation = Quaternion(0.009886598, -0.002074285, -0.012704502, 0.99986833)
+bones/5/rotation = Quaternion(-0.06265542, -0.01799255, 0.0027249742, 0.9978693)
+bones/7/rotation = Quaternion(-0.66147196, -0.3353809, 0.5664615, -0.35929915)
+bones/8/rotation = Quaternion(0.41483995, -0.137189, 0.07136502, 0.89665717)
+bones/9/rotation = Quaternion(0.011301749, 8.928139e-06, 0.19464077, 0.9808095)
+bones/10/rotation = Quaternion(-0.07177212, 0.25954586, 0.09260265, 0.9585977)
+bones/11/rotation = Quaternion(0.06079669, 0.007681721, 0.34385425, 0.9370214)
+bones/12/rotation = Quaternion(0.076292895, -0.029711701, -0.24336955, 0.96647197)
+bones/13/rotation = Quaternion(-0.054518495, -0.030921001, -0.20124348, 0.97753406)
+bones/15/rotation = Quaternion(0.25184873, -0.011864794, 0.07352768, 0.9648965)
+bones/16/rotation = Quaternion(0.2715261, 0.0008260552, 0.0049014497, 0.96241826)
+bones/17/rotation = Quaternion(0.16372004, 0.009887541, 0.0915748, 0.9821976)
+bones/19/rotation = Quaternion(0.67637205, -0.35053194, 0.49388102, 0.41920158)
+bones/20/rotation = Quaternion(0.4080824, 0.119808026, -0.056548994, 0.9032813)
+bones/21/rotation = Quaternion(0.01152946, -2.439397e-06, -0.19381383, 0.98097056)
+bones/22/rotation = Quaternion(0.00036758292, -0.35163072, -0.07929753, 0.9327742)
+bones/23/rotation = Quaternion(0.06995273, 0.023336409, -0.26702163, 0.960865)
+bones/24/rotation = Quaternion(0.09966842, 0.030912371, 0.21843605, 0.97025585)
+bones/25/rotation = Quaternion(-0.049945146, 0.014529254, 0.2042703, 0.9775316)
+bones/27/rotation = Quaternion(0.1371818, -0.00048044848, -0.07618397, 0.98761183)
+bones/28/rotation = Quaternion(0.2128542, -0.0010919989, -0.014778777, 0.9769717)
+bones/29/rotation = Quaternion(0.15895881, -0.008560857, -0.12450859, 0.97936535)
+bones/31/rotation = Quaternion(0.15201512, 0.21649009, 0.9596931, -0.09493581)
+bones/32/rotation = Quaternion(-0.37297437, -0.08797053, 0.017919116, 0.9234881)
+bones/33/rotation = Quaternion(0.5343477, -0.048613362, -0.048957933, 0.8424443)
+bones/34/rotation = Quaternion(0.41030797, -0.058171928, 0.019595815, 0.90987885)
+bones/36/rotation = Quaternion(-0.035470907, 0.22192371, 0.9744085, -0.004452327)
+bones/37/rotation = Quaternion(-0.34818065, 0.084612355, -0.038942933, 0.9327886)
+bones/38/rotation = Quaternion(0.61310583, 0.003452803, -0.022834659, 0.78966314)
+bones/39/rotation = Quaternion(0.2601777, 0.04977744, -0.015402333, 0.9641538)
+
+[node name="1_Humanoid" parent="." instance=ExtResource("2_6xs7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2454811, 0, -0.052483805)
+
+[editable path="Injured Idle"]
+[editable path="1_Humanoid"]

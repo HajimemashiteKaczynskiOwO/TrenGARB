@@ -11,13 +11,33 @@ config_version=5
 [application]
 
 config/name="garbGame"
+config/version="0.5"
 run/main_scene="uid://bmn6f7lw5bue7"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bd2e8y3qpmwmc"
 
-[autoload]
+[display]
 
-globScript="*res://scripts/global/glob_script.gd"
+window/vsync/vsync_mode=0
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://animations/": "yellow",
+"res://audio/": "blue",
+"res://intelligence/": "purple",
+"res://models/": "red",
+"res://scripts/": "green",
+"res://textures/": "pink"
+}
+
+[global_group]
+
+tasks=""
 
 [input]
 
@@ -66,3 +86,9 @@ menu={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[project_time_traker]
+
+sections/show_sections=true
+sections/show_graphs=true
+afk/afk_timer=300

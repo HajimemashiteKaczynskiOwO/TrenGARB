@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1lmlyf7kkucb"]
+
+[ext_resource type="PackedScene" uid="uid://bed087mof4k82" path="res://models/vehicles/Cars/Car 08/Car8.blend" id="1_5dvj3"]
+[ext_resource type="Texture2D" uid="uid://codqjhv1nn0ji" path="res://models/vehicles/Cars/Car 08/Car8_candy_1.png" id="2_y0toi"]
+[ext_resource type="AudioStream" uid="uid://do6ujrjg337c5" path="res://audio/sfx/candyTruck/mb4b.wav" id="3_84tdj"]
+[ext_resource type="AudioStream" uid="uid://dle704hn40mua" path="res://audio/sfx/candyTruck/mb8.wav" id="4_l7nih"]
+[ext_resource type="PackedScene" uid="uid://dwgqx5pietri" path="res://models/map/menuTSCN/grassyBot.fbx" id="5_y0toi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s5l1"]
+albedo_texture = ExtResource("2_y0toi")
+
+[sub_resource type="Animation" id="Animation_84tdj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, -0.6812194, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0toi"]
+resource_name = "driveround"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.82, 1.5150257, 2.43, 4.21),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.5945175, 0, -30.80053), Vector3(-11.056482, 1.9073486e-06, -5.0606346), Vector3(5.168399, 0, 7.142782), Vector3(5.831847, 0, -11.690993), Vector3(0.6457622, 0, -30.323414)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39, 0.79, 0.9, 1.41, 1.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, -0.30421078, 0), Vector3(1.5707964, -0.6812194, 0), Vector3(1.5707964, -0.31853524, 0), Vector3(1.5707964, 0.90021855, 0), Vector3(1.5707964, 0.7503993, 0), Vector3(1.5707964, -2.8634164, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7nih"]
+_data = {
+&"RESET": SubResource("Animation_84tdj"),
+&"driveround": SubResource("Animation_y0toi")
+}
+
+[sub_resource type="Environment" id="Environment_b32dr"]
+fog_enabled = true
+fog_light_color = Color(0.18371075, 0.20317361, 0.2334575, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0289
+volumetric_fog_albedo = Color(0.5370113, 0.5370113, 0.5370113, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Car82" parent="." instance=ExtResource("1_5dvj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049136877, 0, 0.9442613)
+
+[node name="Car8" parent="Car82" index="0"]
+transform = Transform3D(0.7768053, -0.62974054, 2.7526838e-08, 0, -4.3711378e-08, -0.9999999, 0.62974066, 0.7768052, -3.395524e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_2s5l1")
+
+[node name="sounds" type="Node3D" parent="Car82/Car8" index="0"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Car82/Car8/sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 5.684342e-14, 0, -5.684342e-14, 1, 0, -1.013279e-06, -2.771596)
+stream = ExtResource("3_84tdj")
+max_distance = 60.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Car82/Car8/sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 8.526513e-14, 0, -8.526513e-14, 1, 0.54268265, -1.013279e-06, -2.8230343)
+stream = ExtResource("4_l7nih")
+autoplay = true
+max_distance = 60.0
+
+[node name="lights" type="Node3D" parent="Car82/Car8" index="1"]
+
+[node name="RLight" type="OmniLight3D" parent="Car82/Car8/lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.4210855e-13, 0, -1.4210855e-13, 1, -1.0233071, 3.0071428, -1.1537433)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Car82/Car8/lights/RLight"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+light_energy = 7.68
+spot_range = 5.59755
+spot_angle = 26.718748
+
+[node name="LLight" type="OmniLight3D" parent="Car82/Car8/lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.7053026e-13, 0, -1.7053026e-13, 1, 1.0057089, 3.0071425, -1.1537431)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Car82/Car8/lights/LLight"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+light_energy = 7.68
+spot_range = 5.59755
+spot_angle = 26.718748
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Car82/Car8" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_l7nih")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.6516484, 0, 0.75852114, 0, 1, 0, -0.75852114, 0, 0.6516484, 9.38479, 5.016534, 14.429217)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+environment = SubResource("Environment_b32dr")
+
+[node name="grassyBot" parent="Camera3D" instance=ExtResource("5_y0toi")]
+transform = Transform3D(2.7586503, 0, 0, 0, 1, 0, 0, 0, 1.5338204, 2.41181, -5.1054564, -16.933687)
+
+[editable path="Car82"]

@@ -1,7 +1,7 @@
 extends Node
 
 @export var min_driveby_interval: float = 10.0
-@export var max_driveby_interval: float = 60.0
+@export var max_driveby_interval: float = 90.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

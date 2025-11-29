@@ -1,5 +1,6 @@
 extends "res://addons/addons/stairs-body/stairs_character_body_3d.gd"
 
+
 # --- Headbob Settings ---
 @export var playerHeight := 0.8
 @export_group("headbob")
@@ -11,15 +12,19 @@ var speed := 5.0
 var jump_speed := 5.0
 var gravity := 9.82
 var mouse_sensitivity := 0.002
-
+var is_suspended: bool = false
 # --- Internal ---
 var camera_pitch := 0.0
 
 func _ready():
 	# Capture the mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("player")  # so tasks can find us easily
 
 func _input(event):
+	
+	if is_suspended:
+		return
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		# --- Yaw (rotate player) ---
 		rotate_y(-event.relative.x * mouse_sensitivity)
@@ -28,8 +33,24 @@ func _input(event):
 		camera_pitch -= event.relative.y * mouse_sensitivity
 		camera_pitch = clamp(camera_pitch, -deg_to_rad(70), deg_to_rad(70))
 		$Camera3D.rotation.x = camera_pitch
-
+func suspend():
+	if is_suspended:
+		return
+	is_suspended = true
+	# release mouse so UI can be visible if you want
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# optionally stop any movement, animations etc.
+	velocity = Vector3.ZERO
+func resume():
+	if not is_suspended:
+		return
+	is_suspended = false
+	# restore mouse capture
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 func _physics_process(delta):
+	if is_suspended: #UR LOCKED"!!
+		velocity = Vector3.ZERO
+		return
 	# --- Gravity ---
 	super(delta)  # let the stair stepping code run first
 	
@@ -78,10 +99,17 @@ func _process(delta: float) -> void:
 		var node = collider
 		while node != null:
 			if node.has_method("interact"):
-				InteractLabel.text = "Press [E] to open/close"
+				# 👇 Check group to set the right prompt
+				if node.is_in_group("tasks"):
+					InteractLabel.text = "Press [E] to start task"
+				else:
+					InteractLabel.text = "Press [E] to interact"
+
+				# 👇 Handle interaction key
 				if Input.is_action_just_pressed("interact"):
 					node.interact()
 				break
+
 			node = node.get_parent()
 	else:
 		InteractLabel.text = ""
