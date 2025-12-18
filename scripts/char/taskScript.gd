@@ -27,9 +27,12 @@ func _ready():
 	else:
 		push_warning("⚠️ No clockTask assigned in Inspector!")
 	#after that is done, add these:
-	staged_tasks.append({"name": "Restock the Cooler", "is_special": false})
-	staged_tasks.append({"name": "Put the boxes on the shelf", "is_special": false})
-
+	match nightCheck.night:
+		0:
+			staged_tasks.append({"name": "Restock the Cooler", "is_special": false})
+			staged_tasks.append({"name": "Put the boxes on the shelf", "is_special": false})
+		1:
+			staged_tasks.append({"name": "Restock the food on the empty shelf.", "is_special": false})
 
 func add_task(name: String, is_special := false):
 	var task = CheckBox.new()

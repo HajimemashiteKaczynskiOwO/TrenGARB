@@ -6,9 +6,9 @@ extends Node3D
 @export var door_point: Marker3D = null
 
 # how often (in game hours) to check for possible arrivals
-const CHECK_INTERVAL_HOURS := 0.1
+const CHECK_INTERVAL_HOURS := 0.3
 # probability a customer arrives each check (0.0–1.0)
-const ARRIVAL_CHANCE := 1
+const ARRIVAL_CHANCE := 0.3
 
 var last_check_hour: float = 0.0
 var rng := RandomNumberGenerator.new()

@@ -6,7 +6,7 @@ extends Node
 @export var ASP : AudioStreamPlayer2D = null
 
 var game_time_seconds: float = 0.0
-const SECONDS_PER_HOUR: float = 45
+const SECONDS_PER_HOUR: float = 20
 const HOURS_IN_DAY: int = 6
 var running: bool = false
 
@@ -22,10 +22,12 @@ func _process(delta: float):
 
 			
 func night_passed():
+	nightCheck.night_passed()
 	endNode.visible = true
 	ASP.play()
 	VSP.play()
 	get_tree().paused = true
+	
 
 
 func start_timer():
@@ -42,4 +44,6 @@ func get_hour_progress() -> float:
 
 
 func _on_video_stream_player_finished():
-	get_tree().change_scene_to_file("res://intro.tscn")
+	print(nightCheck.night)
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/intros/intro1.tscn")

@@ -1,4 +1,5 @@
 extends StaticBody3D
+class_name Task
 
 @onready var tBar: ProgressBar = $"../../../CanvasLayer/taskBar"
 @onready var interactPrompt = $"../../../CanvasLayer/interactLabel"  # Adjust path to your UI
@@ -92,6 +93,10 @@ func _doingTask() -> void:
 	is_doing_task = false
 	task_done = true
 	print(task_name + "✅ task complete! Took %.2f seconds." % task_duration)
+	var customer = get_tree().get_first_node_in_group("customer")
+	if customer:
+		customer.waiting_for_player_scan = false
+		print("customer should now be able to leave.")
 	
 	#resume player
 	if player and player.has_method("resume"):

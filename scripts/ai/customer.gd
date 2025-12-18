@@ -8,7 +8,7 @@ extends CharacterBody3D
 @onready var doorAnim = $"../../../StoreManager/Door/AnimationPlayer"
 @onready var storeSpots = $"../../../StoreSpots"
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var taskLength = $"../../../Checkout/StaticBody3D.task_type"
+@onready var task : Task = $"../../../Checkout/StaticBody3D"
 # CHECKOUT
 @onready var checkoutSpot = $"../../../Checkout/checkoutSpot"
 @onready var foodParent = $"../../../Checkout/Foods"
@@ -20,8 +20,10 @@ var target_position: Vector3 = Vector3.ZERO
 var moving := false
 var state := "idle"
 var move_timer := 0.0
+var waiting_for_player_scan: bool = false
 
 func _ready():
+	add_to_group("customer")
 	idle_player.play("Idle")
 
 func set_origin_car(car: Node3D, parking_index: int) -> void:
@@ -30,13 +32,13 @@ func set_origin_car(car: Node3D, parking_index: int) -> void:
 
 func set_target(pos: Vector3):
 	if moving:
-		print(name, "already moving — ignoring new target.")
+		print(name, "already moving so ignoring new target")
 		return
 	target_position = pos
 	moving = true
 	move_timer = 0.0
 
-	# Don’t override special walking states
+	# dont override
 	if not state.begins_with("walking_"):
 		state = "walking"
 
@@ -45,7 +47,7 @@ func set_target(pos: Vector3):
 
 
 func _physics_process(delta):
-	
+
 	if not moving:
 		return
 
@@ -90,7 +92,7 @@ func _arrived():
 	idle_player.play("Idle")
 
 	if state == "walking_to_door":
-		await _try_open_door()  # ✅ await the coroutine
+		await _try_open_door()
 
 	elif state == "walking_to_spot":
 		var forward_dir = -global_transform.basis.z
@@ -103,6 +105,39 @@ func _arrived():
 
 		_walk_to_counter()
 
+	elif state == "walking_to_counter":
+		# Customer arrived at checkout counter -> wait for the player
+		state = "at_counter"
+		print(name, "arrived at checkout counter")
+		# face the counter
+		var forward_dir = -global_transform.basis.z
+		look_at(global_transform.origin + forward_dir, Vector3.UP)
+
+		# tell game logic this customer is ready to be scanned (optional signal / UI hook)
+		place_items()
+
+		# mark that we are waiting for player
+		waiting_for_player_scan = true
+		print(name, "waiting for player to scan...")
+
+		# Wait until the player clears the flag (scanner will set this to false)
+		while waiting_for_player_scan:
+			await get_tree().process_frame
+
+		print(name, "player scanned items; leaving store")
+		leave_store()
+
+
+
+	elif state == "walking_to_exit_door":
+		# Customer arrived at exit door
+		state = "at_exit_door"
+		print(name, "arrived at exit door")
+		_try_exit_door()
+
+	elif state == "walking_to_car":
+		# Customer arrived at car
+		_finish_trip()
 func _try_open_door() -> void:
 	print(name, "is opening the door...")
 	state = "opening_door"
@@ -118,21 +153,18 @@ func _try_open_door() -> void:
 func _walk_to_place():
 	print(name, ">>> _walk_to_place() called")
 
-	var free_spot: Marker3D = null
+	var free_spots: Array[Marker3D] = []
 	
 	for c in storeSpots.get_children():
 		if c is Marker3D and not c.visible:
-			free_spot = c
-			break
-	
+			free_spots.append(c)
 
-	if free_spot == null:
-		print(name, "no free store spot found for", name)
+	if free_spots.is_empty():
+		print(name, " no free store spot found for ", name)
 		return
 
-	# Mark the spot as taken
+	var free_spot: Marker3D = free_spots[randi() % free_spots.size()]
 	free_spot.visible = true
-
 	# Now set their new target
 	print(name, "walking to spot:", free_spot.name)
 	state = "walking_to_spot"
@@ -154,9 +186,8 @@ func _walk_to_counter():
 	idle_player.stop()
 	anim_player.play("Walk")
 	
-	_pay_items()
 
-func _pay_items():
+func place_items():
 	#Make Random Amount and Random Item Visible!
 	var hidden_markers = []
 	for c in foodParent.get_children():
@@ -168,15 +199,20 @@ func _pay_items():
 		random_marker.visible = true
 		
 	if hidden_markers.size() < 3:
-		taskLength = "short"
+		task.task_type = "short"
 	else:
-		taskLength = "long"
+		task.task_type = "long"
 	
 	#After Visible, Activate the Scanning task.
 	scanBody.disabled = false
-	leave_store()
+	
 	
 func leave_store():
+	#make all items invis again
+	for c in foodParent.get_children():
+		if c is MeshInstance3D:
+			c.visible = false
+
 	await get_tree().create_timer(randf_range(2.0, 4.0)).timeout
 	
 	var spot = get_meta("spot")
@@ -184,7 +220,7 @@ func leave_store():
 		spot.visible = false
 	
 	state = "walking_to_exit_door"
-	set_target(doorAnim.get_parent().global_position) # or door position
+	set_target(-doorAnim.get_parent().global_position) # or door position
 
 func _try_exit_door():
 	state = "exiting_door"
@@ -205,6 +241,8 @@ func _walk_to_car():
 	anim_player.play("Walk")
 
 func _finish_trip():
+	nightCheck.pleased_customer()
+	print(nightCheck.pleasedCustomer)
 	state = "done"
 	anim_player.stop()
 	idle_player.play("Idle")

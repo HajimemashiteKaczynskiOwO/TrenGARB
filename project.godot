@@ -16,6 +16,10 @@ run/main_scene="uid://bmn6f7lw5bue7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://bd2e8y3qpmwmc"
 
+[autoload]
+
+nightCheck="*res://scripts/global/glob_night_check.gd"
+
 [display]
 
 window/vsync/vsync_mode=0

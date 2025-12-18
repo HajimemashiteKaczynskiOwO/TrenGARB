@@ -1,0 +1,510 @@
+[gd_scene load_steps=33 format=4 uid="uid://dxk1bymhfndqi"]
+
+[ext_resource type="Script" uid="uid://d2kdhjvfemj5q" path="res://scripts/scene1/introScript1.gd" id="1_dpxxx"]
+[ext_resource type="Texture2D" uid="uid://b3215p2wv76xq" path="res://models/obj/Texture/Tele (1).jpg" id="1_y72e6"]
+[ext_resource type="Script" uid="uid://8bvu1lt0ufw2" path="res://scripts/tv/connector.gd" id="2_u2rf6"]
+[ext_resource type="Shader" uid="uid://mnwv20mvj8o7" path="res://crt.gdshader" id="3_y6ycx"]
+[ext_resource type="Shader" uid="uid://dl3gjjupie1sp" path="res://crt1.gdshader" id="5_dk2oa"]
+[ext_resource type="Script" uid="uid://d2rbojy2a5r67" path="res://scripts/gameStart/sequence1.gd" id="6_u2rf6"]
+[ext_resource type="Script" uid="uid://br0so07vyr04p" path="res://scripts/gameStart/sequence2.gd" id="7_y6ycx"]
+[ext_resource type="VideoStream" uid="uid://ben7if6fne6dq" path="res://videos/night2.ogv" id="8_xsd0a"]
+[ext_resource type="Script" uid="uid://cv3rt5rr2ud1a" path="res://scripts/buttons/menu/options_button.gd" id="9_d0rr7"]
+[ext_resource type="Script" uid="uid://y2lct7mb8d7j" path="res://scripts/buttons/menu/menu.gd" id="9_wby50"]
+[ext_resource type="LabelSettings" uid="uid://3l7r8fnrrw54" path="res://textures/textTextures/mainMenu.tres" id="10_wby50"]
+[ext_resource type="Script" uid="uid://bn6qku3uso0tx" path="res://volumeScript.gd" id="11_xsd0a"]
+[ext_resource type="Script" uid="uid://caqserwoy1gll" path="res://scripts/buttons/menu/onPlay.gd" id="12_smii7"]
+
+[sub_resource type="Theme" id="Theme_u2rf6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ufi4"]
+albedo_texture = ExtResource("1_y72e6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irci1"]
+resource_name = "Material.108"
+cull_mode = 2
+roughness = 0.07647059
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvhwo"]
+resource_name = "Material.109"
+cull_mode = 2
+albedo_color = Color(0, 0.8000001, 0.02081303, 1)
+roughness = 0.07647059
+emission_enabled = true
+emission = Color(0, 1, 0.0257801, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yktdi"]
+_surfaces = [{
+"aabb": AABB(-1.053032, -0.8652167, -0.4807636, 2.1067052, 1.6881459, 1.1042557),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAABAAAABAAFAAEABgAEAAAABQAHAAEAAQAHAAMABQAIAAcABgAHAAgABgAJAAcABgAAAAkAAwAHAAkAAAACAAoACQAAAAoAAwALAAIACgACAAsAAwAJAAwACQAKAAwADAANAAMAAwANAAsADAAKAA4ACgALAA4ADAAPAA0ADwALAA0ADAAOAA8ADwAOAAsA"),
+"name": "Material.108",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP//AABwmwAAAAAAAHCbAABk8f3iAAAAADzuqBsAAAAA6xT94gAAAAAAAAAAAAAAAMIRqBsAAAAAAAD//wAAAAD/////+p0AAHfYBTn//wAAAAD///qdAAAPJwU5//8AAHfY3e/9/wAADyfd7/3/AAA=")
+}, {
+"aabb": AABB(-0.9068709, -0.6828302, -0.4807636, 1.8403769, 1.3144741, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAACAAMA"),
+"name": "Material.109",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("nQP//wAAAAAAAAAAAAAAAGH8AAAAAAAA/////wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h0kys"]
+resource_name = "Cube.311"
+_surfaces = [{
+"aabb": AABB(-1.053032, -0.8652167, -0.4807636, 2.1067052, 1.6881459, 1.1042557),
+"attribute_data": PackedByteArray("yeAe9Mngnf5a3Z3+S90e9PnfyPSq2cj0qtlG/ELYXvRc4V70XOGJ+ELYifhc4V70Qthe9ELYm/hc4Zv4Wt2d/sngnf7J4B70S90e9Fzhy/hC2Mv4qtlh+/nfYftS3CD0YNye/lbaR/xR3CD0VdrJ9FfaR/xc4f//+d90/arZdP18ihLyPPcS8v//6/+t9USO7YhEjrqBvn/tiESOuoHr/3yKEvKt9USO//++f///6/889xLy+d/I9KrZRvz530b8Utwg9FbaR/xU2sn0Udwg9FfaR/xf3J7+XOH//6rZdP1C2P//fIoS8v//6/+6gev/rfVEjrqBvn///75/"),
+"format": 34896613399,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABwAIAAkABwAJAAoACwAMAA0ACwANAA4ADwAQABEADwARABIAEwAUABUAEwAVABYAFwAYABkAGgAbABwAHQAeAB8AIAAhACIAIwAkACUAJgAnACUAJgAoACcAKQAqACsAKQArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsAPAA9AD4A"),
+"material": SubResource("StandardMaterial3D_irci1"),
+"name": "Material.108",
+"primitive": 3,
+"uv_scale": Vector4(1.9698396, 2.0175612, 0, 0),
+"vertex_count": 63,
+"vertex_data": PackedByteArray("/////wAA/7///wAAAAD/v///AABwm/+///////qd/78PJ93v/f8AAHfY3e/9/wAAd9gFOf//AAD//wAAAAD//wAAAAAAAP//AAAAAHCb/////wAAcJv//wAA//8AAAAA/////wAAAAD/////+p0AAAAA///6nQAAAAAAAHCbAAAAAAAAAAAAAAAA//8AAAAAAAD///qdAAAAAP//+p0AAP/////6nQAAd9jd7/3/AAAPJ93v/f8AAP/////6naul//8AAHCbq6V32AU5//+rpQAA///6nQAADyfd7/3/AAAPJwU5//8DAAAAAABwmwAADycFOf//AAB32AU5//8AADzuqBsAAP//whGoGwAA//8AAAAAAAD//+sU/eIAAP//ZPH94gAA////////AAD//2Tx/eIAAP////8AAAAA//887qgbAAD//+sU/eIAAP//AAD//wAA//8AAAAAAAD//8IRqBsAAP//Dyfd7/3/AAB32AU5//8AAA8nBTn//wAA//////qdRqV32AU5//9GpXfY3e/9/0alAAD///qdDwAPJwU5//8PAAAAAABwmw8AAAAAAHCbAAB32AU5//8AAP//AABwmwAAPO6oGwAA//8AAAAAAAD/////AAAAAP//6xT94gAA////////AAD//wAA//8AAP///38AAP9/AAD/fwAA/38AAP9//3//f/9//3//f/9//z//f/8//3//P/9//z//f/+//3//v/9//7//f/+//z//f/8//3//P/9//z//f/9/Ebj/fxG4/38RuP9/Ebh7f7sAe3+7AHt/uwD//5DV//+Q1f//kNX/f+BX/3/gV/9/4Ff/f////3////9/////f////3////9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3//f/9//3//f/9/838DAPN/AwDzfwMASFXTf0hV039IVdN//3/gV/9/4Ff/f+BX/3////9/////f////3/+//9//v//f/7/")
+}, {
+"aabb": AABB(-0.9068709, -0.6828302, -0.4807636, 1.8403769, 1.3144741, 1e-05),
+"attribute_data": PackedByteArray("z+fJHOHqJuapFCbmlxHJHA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAACAAMA"),
+"material": SubResource("StandardMaterial3D_vvhwo"),
+"name": "Material.109",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("nQP//wAA//8AAAAAAAD//2H8AAAAAP///////wAA////f////3////9/////f/7/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yktdi")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d0rr7"]
+viewport_path = NodePath("worldEnv/Television/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7qbo"]
+resource_local_to_scene = true
+render_priority = 1
+shader = ExtResource("3_y6ycx")
+shader_parameter/screen_texture = SubResource("ViewportTexture_d0rr7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wby50"]
+material = SubResource("ShaderMaterial_r7qbo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsd0a"]
+resource_local_to_scene = true
+shader = ExtResource("5_dk2oa")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 64.790003077525
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.4130000196175
+shader_parameter/aberration = 0.04100004944750002
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="Animation" id="Animation_u2rf6"]
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.1937939)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y6ycx"]
+resource_name = "bob"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 2.9281707, 1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0), Vector3(0.008726646, -3.1415927, 0), Vector3(0, -3.1415925, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.61694)]
+}
+
+[sub_resource type="Animation" id="Animation_y72e6"]
+resource_name = "start"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.1937939), Vector3(0, 0, 0.61694)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6ycx"]
+_data = {
+&"RESET": SubResource("Animation_u2rf6"),
+&"bob": SubResource("Animation_y6ycx"),
+&"start": SubResource("Animation_y72e6")
+}
+
+[sub_resource type="Environment" id="Environment_y72e6"]
+background_energy_multiplier = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmx7j"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0.3075619, 2.9480086e-07, 1.5642495e-07, 1)
+border_blend = true
+corner_detail = 1
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwhnr"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0, 0, 0, 1)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h770g"]
+bg_color = Color(0.4487638, 0.04063718, 0.06645635, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0.30588236, 0, 0, 1)
+border_blend = true
+corner_detail = 1
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn042"]
+bg_color = Color(0, 0, 0, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 1
+shadow_size = 6
+
+[node name="Intro" type="Node3D"]
+script = ExtResource("1_dpxxx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_y6ycx")
+
+[node name="Button" type="Button" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 203.0
+offset_right = 46.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u2rf6")
+theme_override_font_sizes/font_size = 46
+text = "GO TO YOUR NEW JOB"
+
+[node name="Television" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.50000006, 0, 0, 0, 0.4999999, 0, 0, 0, 0.5, 0, 0, 1.8790686)
+material_override = SubResource("StandardMaterial3D_7ufi4")
+mesh = SubResource("ArrayMesh_h0kys")
+skeleton = NodePath("")
+script = ExtResource("2_u2rf6")
+
+[node name="Screen" type="MeshInstance3D" parent="Television"]
+transform = Transform3D(1.675098, -1.4901161e-08, 5.9604645e-08, -2.0861626e-07, -1.2310774, 1.1175871e-07, -2.3841858e-07, 1.4901161e-08, -0.41246605, -0.07266617, 0.09254336, -0.48373795)
+mesh = SubResource("QuadMesh_wby50")
+
+[node name="SubViewport" type="SubViewport" parent="Television"]
+disable_3d = true
+size = Vector2i(1024, 720)
+render_target_update_mode = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Television/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("8_xsd0a")
+expand = true
+bus = &"SFX"
+
+[node name="CrtEffect" type="ColorRect" parent="Television/SubViewport"]
+material = SubResource("ShaderMaterial_xsd0a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.7453811, 0.5942969, 0.71195847, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 1.1937939)
+script = ExtResource("6_u2rf6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_y6ycx")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y72e6")
+
+[node name="menu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_wby50")
+
+[node name="playButton" type="Button" parent="menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -123.0
+offset_right = 78.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmx7j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwhnr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h770g")
+text = "CONTINUE"
+
+[node name="optionsButton" type="Button" parent="menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -32.0
+offset_right = 78.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmx7j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwhnr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h770g")
+text = "OPTIONS"
+script = ExtResource("9_d0rr7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="menu/optionsButton"]
+visible = false
+layout_mode = 0
+offset_left = 421.0
+offset_top = -87.0
+offset_right = 461.0
+offset_bottom = -47.0
+scale = Vector2(9.440001, 7.4211955)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qn042")
+
+[node name="Label" type="Label" parent="menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 0.95338976
+offset_top = 2.6949835
+offset_right = 58.95339
+offset_bottom = 25.694984
+scale = Vector2(0.19974326, 0.24390042)
+text = "SFX"
+label_settings = ExtResource("10_wby50")
+script = ExtResource("11_xsd0a")
+
+[node name="HSlider" type="HSlider" parent="menu/optionsButton/Panel/Label"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="Label2" type="Label" parent="menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 1.2711864
+offset_top = 13.070671
+offset_right = 118.27119
+offset_bottom = 36.07067
+scale = Vector2(0.19974326, 0.24390042)
+text = "Music"
+label_settings = ExtResource("10_wby50")
+script = ExtResource("11_xsd0a")
+
+[node name="musicSlider" type="HSlider" parent="menu/optionsButton/Panel/Label2"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="Label3" type="Label" parent="menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 1.2711864
+offset_top = 22.772614
+offset_right = 118.27119
+offset_bottom = 45.772614
+scale = Vector2(0.19974326, 0.24390042)
+text = "Dialogue"
+label_settings = ExtResource("10_wby50")
+script = ExtResource("11_xsd0a")
+
+[node name="talkSlider" type="HSlider" parent="menu/optionsButton/Panel/Label3"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="quit2Button" type="Button" parent="menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58179015
+anchor_right = 0.5
+anchor_bottom = 0.58179015
+offset_left = -78.0
+offset_top = -32.0
+offset_right = 78.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmx7j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pwhnr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h770g")
+text = "QUIT TO MENU"
+script = ExtResource("12_smii7")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="menu"]
+z_index = -1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05490196, 0.05490196, 0.05490196, 0.63529414)
+
+[node name="skipButton" type="Control" parent="."]
+z_index = -2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 602.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="skipButton" type="Button" parent="skipButton"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 74.0
+grow_vertical = 0
+text = "SKIP"
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
+[connection signal="finished" from="Television/SubViewport/VideoStreamPlayer" to="Control" method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="menu/playButton" to="menu" method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu/optionsButton" to="menu/optionsButton" method="_on_pressed"]
+[connection signal="value_changed" from="menu/optionsButton/Panel/Label/HSlider" to="menu/optionsButton/Panel/Label" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="menu/optionsButton/Panel/Label2/musicSlider" to="menu/optionsButton/Panel/Label2" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="menu/optionsButton/Panel/Label3/talkSlider" to="menu/optionsButton/Panel/Label3" method="_on_talk_slider_value_changed"]
+[connection signal="pressed" from="menu/quit2Button" to="menu" method="_on_quit_2_button_pressed"]
+[connection signal="pressed" from="skipButton/skipButton" to="menu" method="_on_skip_button_pressed"]
