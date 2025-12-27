@@ -24,6 +24,10 @@ nightCheck="*res://scripts/global/glob_night_check.gd"
 
 window/vsync/vsync_mode=0
 
+[dotnet]
+
+project/assembly_name="garbGame"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")

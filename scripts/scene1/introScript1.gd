@@ -5,8 +5,9 @@ var video1 := preload("res://videos/night1.ogv")
 var video2 := preload("res://videos/night2.ogv")
 var video3 := preload("res://videos/night3(1).ogv")
 var video4 := preload("res://videos/night4(1).ogv")
-@onready var skip = $skipButton
 @onready var camera_3d : TVCamera = $Camera3D
+@onready var skip = $skipButton
+@onready var skip_button = $skipButton/skipButton
 
 
 func _ready():
@@ -28,14 +29,14 @@ func update_video():
 			video_stream_player.stream = video2
 			video_stream_player.play()
 			print("wplaw")
-			skip.visible = false
+			skip.visible = true
 		2:
 			print("hi its night 3")
 			
 			video_stream_player.stream = video3 #change to 3
 			video_stream_player.play()
 			print("wplaw")
-			skip.visible = false
+			skip.visible = true
 		
 		3:
 			print("hi its night 4")

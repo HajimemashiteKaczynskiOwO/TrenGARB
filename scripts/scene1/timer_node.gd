@@ -6,7 +6,7 @@ extends Node
 @export var ASP : AudioStreamPlayer2D = null
 
 var game_time_seconds: float = 0.0
-const SECONDS_PER_HOUR: float = 20
+const SECONDS_PER_HOUR: float = 3
 const HOURS_IN_DAY: int = 6
 var running: bool = false
 

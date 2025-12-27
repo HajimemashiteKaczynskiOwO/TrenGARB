@@ -187,12 +187,11 @@ text = "OPTIONS"
 script = ExtResource("4_c3jr6")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/mainMenu/optionsButton"]
-visible = false
 layout_mode = 0
-offset_left = 421.0
-offset_top = -87.0
-offset_right = 461.0
-offset_bottom = -47.0
+offset_left = 441.0
+offset_top = -116.000015
+offset_right = 481.04236
+offset_bottom = -60.07911
 scale = Vector2(9.440001, 7.4211955)
 theme_override_styles/panel = SubResource("StyleBoxFlat_c3jr6")
 
@@ -259,6 +258,15 @@ max_value = 1.5
 step = 0.001
 value = 0.75
 
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/mainMenu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 1.9067795
+offset_top = 35.708534
+offset_right = 108.90678
+offset_bottom = 66.708534
+scale = Vector2(0.20101719, 0.24070007)
+text = "Fullscreen"
+
 [node name="quitButton" type="Button" parent="CanvasLayer/mainMenu"]
 layout_mode = 1
 anchors_preset = 4
@@ -287,4 +295,5 @@ texture = ExtResource("9_o0ref")
 [connection signal="value_changed" from="CanvasLayer/mainMenu/optionsButton/Panel/Label/HSlider" to="CanvasLayer/mainMenu/optionsButton/Panel/Label" method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/mainMenu/optionsButton/Panel/Label2/musicSlider" to="CanvasLayer/mainMenu/optionsButton/Panel/Label2" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/mainMenu/optionsButton/Panel/Label3/talkSlider" to="CanvasLayer/mainMenu/optionsButton/Panel/Label3" method="_on_talk_slider_value_changed"]
+[connection signal="toggled" from="CanvasLayer/mainMenu/optionsButton/Panel/CheckBox" to="CanvasLayer/mainMenu/optionsButton" method="_on_check_box_toggled"]
 [connection signal="pressed" from="CanvasLayer/mainMenu/quitButton" to="CanvasLayer/mainMenu/playButton" method="_on_quit_button_pressed"]
