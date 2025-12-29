@@ -1,0 +1,11 @@
+﻿1
+00:00:10,300 --> 00:00:12,920
+ Hello and Welcome to Shashumga News.
+
+2
+00:00:13,280 --> 00:00:20,010
+Todays Stories – The moaning attacker on our news station has been apprehended and put into solitary confinement.
+
+3
+00:00:20,510 --> 00:00:28,930
+New evidence points to the dissappearances being linked to a serial killer, whom the public has aptly named the Candy Truck Killer. 

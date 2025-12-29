@@ -13,7 +13,7 @@ config_version=5
 config/name="garbGame"
 config/version="0.5"
 run/main_scene="uid://bmn6f7lw5bue7"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="uid://bd2e8y3qpmwmc"
 
 [autoload]
@@ -30,7 +30,7 @@ project/assembly_name="garbGame"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+enabled=PackedStringArray("res://addons/frog_subtitles/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
 
 [file_customization]
 

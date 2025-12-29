@@ -2,7 +2,7 @@ extends Node
 
 signal night_changed(night)
 
-var night = 1
+var night = 0
 var pleasedCustomer = 0
 
 func night_passed():

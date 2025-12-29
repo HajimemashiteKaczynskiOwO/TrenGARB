@@ -2,7 +2,7 @@ extends Node
 
 func _on_pressed():
 	nightCheck.night = 0
-	get_tree().change_scene_to_file("res://scenes/intros/intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/intros/intro1.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()

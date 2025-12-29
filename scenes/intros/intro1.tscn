@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://8k1yqabjr5ko"]
+[gd_scene load_steps=36 format=4 uid="uid://8k1yqabjr5ko"]
 
 [ext_resource type="Script" uid="uid://d2kdhjvfemj5q" path="res://scripts/scene1/introScript1.gd" id="1_b8yts"]
 [ext_resource type="Script" uid="uid://br0so07vyr04p" path="res://scripts/gameStart/sequence2.gd" id="2_8sijj"]
@@ -13,6 +13,8 @@
 [ext_resource type="LabelSettings" uid="uid://3l7r8fnrrw54" path="res://textures/textTextures/mainMenu.tres" id="11_n5acv"]
 [ext_resource type="Script" uid="uid://bn6qku3uso0tx" path="res://volumeScript.gd" id="12_nv7a5"]
 [ext_resource type="Script" uid="uid://caqserwoy1gll" path="res://scripts/buttons/menu/onPlay.gd" id="13_jkwjj"]
+[ext_resource type="Script" uid="uid://yilkhkjp5tcg" path="res://addons/frog_subtitles/nodes/VideoStreamSubtitles.cs" id="14_ofvx6"]
+[ext_resource type="Resource" uid="uid://d1emyuid8bla6" path="res://videos/subtitles/night1.srt" id="15_ao64y"]
 
 [sub_resource type="Theme" id="Theme_u2rf6"]
 
@@ -240,35 +242,35 @@ border_blend = true
 corner_radius_top_left = 1
 shadow_size = 6
 
+[sub_resource type="Theme" id="Theme_ofvx6"]
+default_font_size = 35
+
 [node name="Intro" type="Node3D"]
 script = ExtResource("1_b8yts")
 
 [node name="Control" type="Control" parent="."]
+z_index = 4096
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("2_8sijj")
 
 [node name="Button" type="Button" parent="Control"]
 visible = false
+z_index = 4096
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = 203.0
-offset_right = 46.0
-offset_bottom = 234.0
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 72.0
 grow_horizontal = 2
-grow_vertical = 2
 theme = SubResource("Theme_u2rf6")
 theme_override_font_sizes/font_size = 46
 text = "GO TO YOUR NEW JOB"
+metadata/_edit_use_anchors_ = true
 
 [node name="Television" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.50000006, 0, 0, 0, 0.4999999, 0, 0, 0, 0.5, 0, 0, 1.8790686)
@@ -480,7 +482,7 @@ mouse_filter = 2
 color = Color(0.05490196, 0.05490196, 0.05490196, 0.63529414)
 
 [node name="skipButton" type="Control" parent="."]
-z_index = -2
+z_index = 999
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -501,30 +503,39 @@ text = "SKIP"
 
 [node name="Subtitles" type="Control" parent="."]
 layout_mode = 3
+anchor_left = 0.112
+anchor_top = 0.89900005
+anchor_right = 0.88000005
+anchor_bottom = 1.0
+offset_left = -0.024002075
+offset_top = -19.552002
+offset_right = 0.2399292
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Night1" type="Control" parent="Subtitles"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Night1" type="Control" parent="Subtitles"]
+[node name="VideoStreamSubtitles" type="RichTextLabel" parent="Subtitles/Night1" node_paths=PackedStringArray("player")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
 grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="Subtitles/Night1"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+grow_vertical = 2
+theme = SubResource("Theme_ofvx6")
 horizontal_alignment = 1
+script = ExtResource("14_ofvx6")
+player = NodePath("../../../Television/SubViewport/VideoStreamPlayer")
+subtitles = ExtResource("15_ao64y")
+metadata/_custom_type_script = "uid://yilkhkjp5tcg"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]
 [connection signal="finished" from="Television/SubViewport/VideoStreamPlayer" to="Control" method="_on_video_stream_player_finished"]

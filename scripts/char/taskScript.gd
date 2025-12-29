@@ -29,9 +29,11 @@ func _ready():
 	#after that is done, add these:
 	match nightCheck.night:
 		0:
+			print("It's nnight one")
 			staged_tasks.append({"name": "Restock the Cooler", "is_special": false})
 			staged_tasks.append({"name": "Put the boxes on the shelf", "is_special": false})
 		1:
+			print("It's nnight two")
 			staged_tasks.append({"name": "Restock the food on the empty shelf.", "is_special": false})
 
 func add_task(name: String, is_special := false):

@@ -187,6 +187,7 @@ text = "OPTIONS"
 script = ExtResource("4_c3jr6")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/mainMenu/optionsButton"]
+visible = false
 layout_mode = 0
 offset_left = 441.0
 offset_top = -116.000015

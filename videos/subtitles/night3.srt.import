@@ -1,0 +1,14 @@
+[remap]
+
+importer="frog-subtitles.plugin"
+type="Resource"
+uid="uid://cycooy7mpkcnl"
+path="res://.godot/imported/night3.srt-42b34c941713ee9077e21aab5849c7e0.res"
+
+[deps]
+
+source_file="res://videos/subtitles/night3.srt"
+dest_files=["res://.godot/imported/night3.srt-42b34c941713ee9077e21aab5849c7e0.res"]
+
+[params]
+
