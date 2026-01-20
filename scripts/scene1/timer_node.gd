@@ -7,7 +7,7 @@ extends Node
 signal time_passed
 
 var game_time_seconds: float = 0.0
-const SECONDS_PER_HOUR: float = 3
+const SECONDS_PER_HOUR: float = 15
 const HOURS_IN_DAY: int = 6
 var running: bool = false
 

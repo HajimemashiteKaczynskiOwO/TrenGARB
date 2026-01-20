@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="garbGame"
-config/version="0.5"
+config/name="Four Nights"
+config/version="1.0.1"
 run/main_scene="uid://bmn6f7lw5bue7"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="uid://bd2e8y3qpmwmc"
