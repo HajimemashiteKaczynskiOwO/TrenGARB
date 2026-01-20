@@ -3,23 +3,31 @@ extends CanvasLayer
 @onready var continue_button = $mainMenu/continueButton
 
 func _ready():
+	var config = ConfigFile.new()
+	var err = config.load("user://save_data.cfg")
+	if err != OK:
+		# No save file, hide continue button
+		continue_button.visible = false
+		nightCheck.night = 0  # Start at night 1
+		return
+	
+	nightCheck.night = config.get_value("Progress", "CurrentNight", 0)
+	
 	match nightCheck.night:
 		0:
-			pass
+			continue_button.visible = false  # No progress yet
 		1:
-			continue_button.text ="PLAY NIGHT 2"
+			continue_button.text = "CONTINUE - NIGHT 2"
 			continue_button.visible = true
+			play_button.text = "START NEW GAME"
 		2:
-			continue_button.text ="PLAY NIGHT 3"
+			continue_button.text = "CONTINUE - NIGHT 3"
 			continue_button.visible = true
+			play_button.text = "START NEW GAME"
 		3:
-			continue_button.text ="PLAY NIGHT 4"
+			continue_button.text = "CONTINUE - NIGHT 4"
 			continue_button.visible = true
-		
-	if nightCheck.night > 0:
-		play_button.text = "START NEW GAME"
-
-
+			play_button.text = "START NEW GAME"
 func _on_continue_button_pressed():
 	match nightCheck.night:
 		0:

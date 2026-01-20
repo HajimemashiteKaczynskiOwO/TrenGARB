@@ -1,6 +1,6 @@
 [gd_scene load_steps=644 format=4 uid="uid://d2mchwm4flsc6"]
 
-[ext_resource type="Script" uid="uid://5vc068ic55s7" path="res://scripts/ai/pFind.gd" id="1_2iebu"]
+[ext_resource type="Script" uid="uid://b6phb67h1ctce" path="res://scenes/nights/scene_4.gd" id="1_2iebu"]
 [ext_resource type="Texture2D" uid="uid://calfbqwoeipyo" path="res://models/map/6twelve/Textures/Metal_03.jpg" id="2_5jj5d"]
 [ext_resource type="Texture2D" uid="uid://b2lplv28wv5l1" path="res://models/map/6twelve/Textures/Leather_01.jpg" id="3_dp6lc"]
 [ext_resource type="Texture2D" uid="uid://c7ad2aeotmymu" path="res://models/map/6twelve/Textures/Plastic_04.jpg" id="4_vb4f4"]
@@ -9989,6 +9989,7 @@ stream = ExtResource("107_8ur7f")
 [node name="doneLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
+anchor_top = -0.015432099
 anchor_right = 0.5
 anchor_bottom = -0.015432099
 offset_left = -212.5

@@ -1,6 +1,6 @@
 [gd_scene load_steps=730 format=4 uid="uid://bamhdy8a6uu70"]
 
-[ext_resource type="Script" uid="uid://cdl0jkq61vjfs" path="res://scripts/scene1/scene_1.gd" id="1_7miiq"]
+[ext_resource type="Script" uid="uid://323ji7y5lk7o" path="res://scenes/nights/scene_2.gd" id="1_8bhth"]
 [ext_resource type="Texture2D" uid="uid://calfbqwoeipyo" path="res://models/map/6twelve/Textures/Metal_03.jpg" id="2_00wxk"]
 [ext_resource type="Script" uid="uid://chpqi54n2nnwi" path="res://scripts/ui/doorScript.gd" id="3_cdxxy"]
 [ext_resource type="Texture2D" uid="uid://b2lplv28wv5l1" path="res://models/map/6twelve/Textures/Leather_01.jpg" id="3_gjl0y"]
@@ -10244,7 +10244,7 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_7miiq")
+script = ExtResource("1_8bhth")
 
 [node name="worldEnv" type="Node3D" parent="."]
 

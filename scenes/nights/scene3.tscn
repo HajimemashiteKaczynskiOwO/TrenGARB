@@ -1,6 +1,6 @@
-[gd_scene load_steps=704 format=4 uid="uid://bbr806sj0p1kr"]
+[gd_scene load_steps=700 format=4 uid="uid://bbr806sj0p1kr"]
 
-[ext_resource type="Script" uid="uid://cdl0jkq61vjfs" path="res://scripts/scene1/scene_1.gd" id="1_o4jag"]
+[ext_resource type="Script" uid="uid://dvngnul50fyk5" path="res://scenes/nights/scene_3.gd" id="1_aoy2j"]
 [ext_resource type="Texture2D" uid="uid://calfbqwoeipyo" path="res://models/map/6twelve/Textures/Metal_03.jpg" id="2_5ri8m"]
 [ext_resource type="Texture2D" uid="uid://b2lplv28wv5l1" path="res://models/map/6twelve/Textures/Leather_01.jpg" id="3_2m0sk"]
 [ext_resource type="Texture2D" uid="uid://c7ad2aeotmymu" path="res://models/map/6twelve/Textures/Plastic_04.jpg" id="4_ql0k3"]
@@ -83,7 +83,6 @@
 [ext_resource type="Texture2D" uid="uid://b3215p2wv76xq" path="res://models/obj/Texture/Tele (1).jpg" id="83_50qvk"]
 [ext_resource type="VideoStream" uid="uid://ckviwlnfob4h8" path="res://videos/gp.ogv" id="84_rya2d"]
 [ext_resource type="Script" uid="uid://8bvu1lt0ufw2" path="res://scripts/tv/connector.gd" id="84_t6pt0"]
-[ext_resource type="Shader" uid="uid://mnwv20mvj8o7" path="res://crt.gdshader" id="85_rgp2t"]
 [ext_resource type="Shader" uid="uid://dl3gjjupie1sp" path="res://crt1.gdshader" id="88_lppw7"]
 [ext_resource type="Script" uid="uid://dp52yjgkvwda8" path="res://scripts/bgScripts/Drivebys/carScript.gd" id="89_755ul"]
 [ext_resource type="PackedScene" uid="uid://cuxmpeikttra1" path="res://models/vehicles/Cars/Car 01/Car.blend" id="90_eleib"]
@@ -6792,18 +6791,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g2ved")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r7qbo"]
-viewport_path = NodePath("worldEnv/Television/SubViewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhfj7"]
-resource_local_to_scene = true
-render_priority = 1
-shader = ExtResource("85_rgp2t")
-shader_parameter/screen_texture = SubResource("ViewportTexture_r7qbo")
-
-[sub_resource type="QuadMesh" id="QuadMesh_m63tb"]
-material = SubResource("ShaderMaterial_mhfj7")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2ved"]
 resource_local_to_scene = true
 shader = ExtResource("88_lppw7")
@@ -10052,7 +10039,7 @@ _data = {
 size = Vector3(1, 1, 1.4315186)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_o4jag")
+script = ExtResource("1_aoy2j")
 
 [node name="worldEnv" type="Node3D" parent="."]
 
@@ -11332,10 +11319,6 @@ mesh = SubResource("ArrayMesh_pcdol")
 skeleton = NodePath("")
 script = ExtResource("84_t6pt0")
 
-[node name="Screen" type="MeshInstance3D" parent="worldEnv/Television"]
-transform = Transform3D(1.675098, -1.4901161e-08, 5.9604645e-08, -2.0861626e-07, -1.2310774, 1.1175871e-07, -2.3841858e-07, 1.4901161e-08, -0.41246605, -0.07266617, 0.09254336, -0.48373795)
-mesh = SubResource("QuadMesh_m63tb")
-
 [node name="SubViewport" type="SubViewport" parent="worldEnv/Television"]
 disable_3d = true
 size = Vector2i(1024, 720)
@@ -11348,7 +11331,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("84_rya2d")
-volume_db = -24.999998
+volume_db = -24.999996
 autoplay = true
 expand = true
 loop = true
