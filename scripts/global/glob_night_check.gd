@@ -1,9 +1,13 @@
 extends Node
+@onready var timer_node = $TimerNode
 
 signal night_changed(night)
 
-var night = 0
+var night = 1
+var timePass = false #if 1AM has passed.
 var pleasedCustomer = 0
+var completionist = false
+var hasHead = false
 
 func night_passed():
 	night += 1

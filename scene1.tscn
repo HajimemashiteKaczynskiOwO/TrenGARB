@@ -1,4 +1,4 @@
-[gd_scene load_steps=709 format=4 uid="uid://comi2dsyd02cy"]
+[gd_scene load_steps=712 format=4 uid="uid://comi2dsyd02cy"]
 
 [ext_resource type="Script" uid="uid://cdl0jkq61vjfs" path="res://scripts/scene1/scene_1.gd" id="1_mhfj7"]
 [ext_resource type="Script" uid="uid://chpqi54n2nnwi" path="res://scripts/ui/doorScript.gd" id="2_btxjs"]
@@ -78,7 +78,9 @@
 [ext_resource type="AudioStream" uid="uid://qs0w2hntncfu" path="res://audio/sfx/doorBell.wav" id="40_e5hle"]
 [ext_resource type="Texture2D" uid="uid://cplounoasj57q" path="res://models/map/6twelve/Textures/Store_fridge.png" id="40_gwp14"]
 [ext_resource type="Texture2D" uid="uid://wl6hnc7rjxsy" path="res://models/map/6twelve/Textures/Lottery.png" id="41_nktgv"]
+[ext_resource type="Script" uid="uid://cl8lbiu5qjkyh" path="res://scripts/global/otherDoorScript.gd" id="42_jwjlx"]
 [ext_resource type="Texture2D" uid="uid://de2deox2vmmrh" path="res://models/map/6twelve/Textures/Plastic_08.jpg" id="42_ounsy"]
+[ext_resource type="AudioStream" uid="uid://djbue2u4dgka" path="res://audio/doorcreakfast.wav" id="43_h74ou"]
 [ext_resource type="Texture2D" uid="uid://b6868p676ja4i" path="res://models/map/6twelve/Textures/Lights.jpg" id="44_r485g"]
 [ext_resource type="Texture2D" uid="uid://cun3waj2ymj" path="res://models/map/6twelve/Textures/Lights_Emissor.jpg" id="45_vqvtr"]
 [ext_resource type="Script" uid="uid://2qwxctksmkga" path="res://scripts/ai/store_manager.gd" id="46_eakjk"]
@@ -106,6 +108,7 @@
 [ext_resource type="Texture2D" uid="uid://b3d28ake6560j" path="res://models/map/6twelve/Textures/Wood_18.jpg" id="58_gh3nd"]
 [ext_resource type="Texture2D" uid="uid://bm5mwpswwh3jc" path="res://models/map/6twelve/Textures/Branches.png" id="59_gy3wm"]
 [ext_resource type="Texture2D" uid="uid://dxfbksdjtah3a" path="res://models/map/6twelve/Textures/extinguisher.jpg" id="60_16box"]
+[ext_resource type="AudioStream" uid="uid://b2uag4vhoncq3" path="res://audio/doorcreak3.wav" id="60_kewbu"]
 [ext_resource type="Texture2D" uid="uid://bowra11ns6wjo" path="res://models/map/6twelve/Textures/Plastic_02.png" id="61_fa81t"]
 [ext_resource type="Texture2D" uid="uid://c5a613hs85qda" path="res://models/map/6twelve/Textures/Garbage_bag.png" id="62_fqjh4"]
 [ext_resource type="Texture2D" uid="uid://dl0td7b7j07fq" path="res://models/map/6twelve/Textures/Metal_10.jpg" id="63_im0ng"]
@@ -10805,7 +10808,7 @@ transform = Transform3D(60.486614, 0, 0, 0, -2.6439543e-06, 60.486614, 0, -60.48
 layers = 2
 mesh = SubResource("ArrayMesh_3qrae")
 skeleton = NodePath("")
-script = ExtResource("2_btxjs")
+script = ExtResource("42_jwjlx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="worldEnv/6twelve/Door_03"]
 collision_layer = 2
@@ -10818,6 +10821,9 @@ shape = SubResource("ConcavePolygonShape3D_ytt8d")
 libraries = {
 &"": SubResource("AnimationLibrary_eptys")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="worldEnv/6twelve/Door_03"]
+stream = ExtResource("43_h74ou")
 
 [node name="Sink" type="MeshInstance3D" parent="worldEnv/6twelve"]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -12.526797, 0.59398067, -25.183372)
@@ -11136,7 +11142,7 @@ transform = Transform3D(107.48795, 4.1857355e-05, -1.829643e-12, 0, 4.698448e-06
 layers = 2
 mesh = SubResource("ArrayMesh_3k4lr")
 skeleton = NodePath("")
-script = ExtResource("2_btxjs")
+script = ExtResource("42_jwjlx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="worldEnv/6twelve/Door_02"]
 transform = Transform3D(1, 1.1368684e-13, -6.7762636e-21, -8.526513e-14, 1.2067512, -1.0658141e-14, 0, 1.0658141e-14, 1.0189494, 0, 0, 0)
@@ -11150,6 +11156,9 @@ shape = SubResource("BoxShape3D_di5qy")
 libraries = {
 &"": SubResource("AnimationLibrary_r7qbo")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="worldEnv/6twelve/Door_02"]
+stream = ExtResource("60_kewbu")
 
 [node name="Door_04" type="MeshInstance3D" parent="worldEnv/6twelve"]
 transform = Transform3D(-107.48795, 4.1857355e-05, 1.829643e-12, 0, -4.698448e-06, 107.48795, 4.1857355e-05, 107.48795, 4.698448e-06, 4.482114, 1.441605, -13.32493)
@@ -11692,6 +11701,7 @@ collision_mask = 6
 script = ExtResource("5_ivjb3")
 
 [node name="crossHair" type="TextureRect" parent="CanvasLayer"]
+z_index = 4096
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

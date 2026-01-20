@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://bj32ysnvo1hui"]
 
 [ext_resource type="Texture2D" uid="uid://dys7ecbj4ag0a" path="res://models/head/head_0.png" id="1_lfrn0"]
-[ext_resource type="AudioStream" uid="uid://bir311d57cpjg" path="res://models/head/scream.mp3" id="2_kcuqb"]
+[ext_resource type="AudioStream" uid="uid://bkqbsqhbt7brt" path="res://audio/sfx/scream2.wav" id="2_lfrn0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2ep6"]
 resource_name = "Material.008"
@@ -51,4 +51,4 @@ mesh = SubResource("ArrayMesh_t5nif")
 skeleton = NodePath("")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_040"]
-stream = ExtResource("2_kcuqb")
+stream = ExtResource("2_lfrn0")

@@ -1,2 +1,5 @@
 extends Node3D
-pass
+
+func _ready():
+	print("night check is", nightCheck.night)
+	print("the night is night", nightCheck.night+1)

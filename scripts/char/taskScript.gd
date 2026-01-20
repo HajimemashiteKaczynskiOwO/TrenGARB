@@ -17,7 +17,8 @@ var has_clocked_in: bool = false
 
 
 func _ready():
-	print("TaskUI ready!")
+	if localTimer and localTimer.has_signal("time_passed"):
+		localTimer.time_passed.connect(_on_time_passed)
 	add_to_group("task_ui")  # lets 3D scripts find this UI easily
 	
 	if clockTask:
@@ -35,6 +36,9 @@ func _ready():
 		1:
 			print("It's nnight two")
 			staged_tasks.append({"name": "Restock the food on the empty shelf.", "is_special": false})
+		3:
+			staged_tasks.append({"name": "Investigate the TV.", "is_special": false})
+			
 
 func add_task(name: String, is_special := false):
 	var task = CheckBox.new()
@@ -132,3 +136,10 @@ func _fade_in_time_label(lbl: Node, duration: float = 2.5):
 
 func is_clocked_in() -> bool:
 	return has_clocked_in
+#night 4 TASKS
+func _on_time_passed():
+	if nightCheck.night == 4:
+		if has_clocked_in:
+			add_task("Look at the TV")
+		else:
+			staged_tasks.append({"name": "Look at the TV", "is_special": false})

@@ -1,0 +1,96 @@
+extends "res://addons/addons/stairs-body/stairs_character_body_3d.gd"
+
+# --- Headbob Settings ---
+@export var playerHeight := 0.8
+@export_group("headbob")
+@export var headbob_frequency = 2.0
+@export var headbob_amplitude = 0.04
+var headbob_time := 0.0
+
+# --- Player settings ---
+var speed := 5.0
+var jump_speed := 5.0
+var gravity := 9.82
+var mouse_sensitivity := 0.002
+var is_suspended: bool = false
+
+# --- Internal ---
+var camera_pitch := 0.0
+
+func _ready():
+	# Capture the mouse
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	add_to_group("player")  # so tasks can find us easily
+
+func _input(event):
+	if is_suspended:
+		return
+		
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		# --- Yaw (rotate player) ---
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		
+		# --- Pitch (rotate camera) ---
+		camera_pitch -= event.relative.y * mouse_sensitivity
+		camera_pitch = clamp(camera_pitch, -deg_to_rad(70), deg_to_rad(70))
+		$Camera3D.rotation.x = camera_pitch
+
+func suspend():
+	if is_suspended:
+		return
+	is_suspended = true
+	# release mouse so UI can be visible if you want
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# optionally stop any movement, animations etc.
+	velocity = Vector3.ZERO
+
+func resume():
+	if not is_suspended:
+		return
+	is_suspended = false
+	# restore mouse capture
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _physics_process(delta):
+	# Call parent's _physics_process FIRST (this handles the stair stepping)
+	super(delta)
+	
+	if is_suspended:
+		velocity = Vector3.ZERO
+		return
+	
+	# --- Gravity ---
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	
+	# --- Movement input ---
+	var input_vec := Input.get_vector("left", "right", "forward", "back")
+	
+	# Transform input to world space and normalize diagonal movement
+	var direction := (transform.basis * Vector3(input_vec.x, 0, input_vec.y))
+	if direction.length() > 0:
+		direction = direction.normalized() * speed
+	else:
+		direction = Vector3.ZERO
+	
+	# Set horizontal velocity (the parent class will handle move_and_slide())
+	velocity.x = direction.x
+	velocity.z = direction.z
+	
+	# --- Headbob update ---
+	headbob_time += delta * velocity.length() * float(is_on_floor())
+	$Camera3D.transform.origin = Vector3(0, playerHeight, 0) + headbob(headbob_time)
+
+func headbob(time: float) -> Vector3:
+	var headbob_position = Vector3.ZERO
+	headbob_position.y = (
+		sin(time * headbob_frequency) +
+		cos(time * headbob_frequency / 2.0)
+	) * headbob_amplitude
+	return headbob_position
+
+func _on_quit_2_button_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://mainMenu.tscn")
+
+@onready var raycast = $Camera3D/RayCast3D

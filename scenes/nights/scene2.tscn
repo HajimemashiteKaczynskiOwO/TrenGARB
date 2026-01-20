@@ -1,4 +1,4 @@
-[gd_scene load_steps=714 format=4 uid="uid://bamhdy8a6uu70"]
+[gd_scene load_steps=730 format=4 uid="uid://bamhdy8a6uu70"]
 
 [ext_resource type="Script" uid="uid://cdl0jkq61vjfs" path="res://scripts/scene1/scene_1.gd" id="1_7miiq"]
 [ext_resource type="Texture2D" uid="uid://calfbqwoeipyo" path="res://models/map/6twelve/Textures/Metal_03.jpg" id="2_00wxk"]
@@ -61,13 +61,16 @@
 [ext_resource type="Script" uid="uid://vfd65s300i4j" path="res://scripts/scene1/boxScript.gd" id="40_huoxd"]
 [ext_resource type="Texture2D" uid="uid://blajyt11babnn" path="res://models/map/6twelve/Textures/Door_03.jpg" id="41_syk0r"]
 [ext_resource type="Texture2D" uid="uid://wqe7dgtedyay" path="res://models/map/6twelve/Textures/Wheel.jpg" id="42_sork8"]
+[ext_resource type="AudioStream" uid="uid://djbue2u4dgka" path="res://audio/doorcreakfast.wav" id="43_4apai"]
 [ext_resource type="Texture2D" uid="uid://ch2r8cn57o5qo" path="res://models/map/6twelve/Textures/Sign_01.png" id="43_ltwvx"]
 [ext_resource type="Texture2D" uid="uid://dsxa2yp3p63u2" path="res://models/map/6twelve/Textures/Metal_01.jpg" id="44_qoctv"]
 [ext_resource type="Texture2D" uid="uid://ck7k16ivu8gjs" path="res://models/map/6twelve/Textures/Metal_09.jpg" id="45_17v4f"]
 [ext_resource type="Texture2D" uid="uid://copr61lwalcwo" path="res://models/map/6twelve/Textures/Trash_01.jpg" id="46_vfvjf"]
 [ext_resource type="Texture2D" uid="uid://b3d28ake6560j" path="res://models/map/6twelve/Textures/Wood_18.jpg" id="47_33mt0"]
+[ext_resource type="Shader" uid="uid://dpmv4x0wk8g6g" path="res://textures/glow.gdshader" id="48_epx1u"]
 [ext_resource type="Texture2D" uid="uid://bm5mwpswwh3jc" path="res://models/map/6twelve/Textures/Branches.png" id="48_l4vst"]
 [ext_resource type="Texture2D" uid="uid://dxfbksdjtah3a" path="res://models/map/6twelve/Textures/extinguisher.jpg" id="49_vdyqn"]
+[ext_resource type="Script" uid="uid://b4aus47lydwwl" path="res://scripts/scary ahh/headTrash.gd" id="50_8bhth"]
 [ext_resource type="Texture2D" uid="uid://bowra11ns6wjo" path="res://models/map/6twelve/Textures/Plastic_02.png" id="50_k0jc0"]
 [ext_resource type="Texture2D" uid="uid://c5a613hs85qda" path="res://models/map/6twelve/Textures/Garbage_bag.png" id="51_n1err"]
 [ext_resource type="Texture2D" uid="uid://dl0td7b7j07fq" path="res://models/map/6twelve/Textures/Metal_10.jpg" id="52_80hu3"]
@@ -76,7 +79,9 @@
 [ext_resource type="Texture2D" uid="uid://bwnyxpvy7hth1" path="res://models/map/6twelve/Textures/Plastic_01.jpg" id="55_x5r8n"]
 [ext_resource type="Texture2D" uid="uid://bbe6bbsvh5pb7" path="res://models/map/6twelve/Textures/SoilSand.jpg" id="56_en6ct"]
 [ext_resource type="Texture2D" uid="uid://dt2ke7ptdlocj" path="res://models/map/6twelve/Textures/Door_01.jpg" id="57_slof1"]
+[ext_resource type="Script" uid="uid://cl8lbiu5qjkyh" path="res://scripts/global/otherDoorScript.gd" id="58_2w3t8"]
 [ext_resource type="Texture2D" uid="uid://bbbd5bh3p32gd" path="res://models/map/6twelve/Textures/Door.jpg" id="58_84ko4"]
+[ext_resource type="AudioStream" uid="uid://b2uag4vhoncq3" path="res://audio/doorcreak3.wav" id="58_cxtw5"]
 [ext_resource type="Texture2D" uid="uid://dd1ckoei25dbo" path="res://models/map/6twelve/Textures/Hygiene.jpg" id="59_8sk0s"]
 [ext_resource type="Texture2D" uid="uid://b1y7xhkgolr78" path="res://models/map/6twelve/Textures/Mop.png" id="60_w7554"]
 [ext_resource type="Texture2D" uid="uid://de8qjpu0c1ra4" path="res://models/map/6twelve/Textures/Trees_Background.png" id="61_hd40p"]
@@ -97,6 +102,7 @@
 [ext_resource type="Texture2D" uid="uid://ck7tkqor6htof" path="res://models/map/6twelve/Textures/Plastic.jpg" id="75_xr8k8"]
 [ext_resource type="Texture2D" uid="uid://vjh3qi1cgoki" path="res://models/map/6twelve/Textures/Plastic_06.jpg" id="76_ev420"]
 [ext_resource type="Texture2D" uid="uid://cmlsfp1uu1itq" path="res://models/map/6twelve/Textures/Asphalt_01.jpg" id="77_kbxc3"]
+[ext_resource type="VideoStream" uid="uid://clcqd2xu428ro" path="res://videos/SmileFinished.ogv" id="87_x2fou"]
 [ext_resource type="AudioStream" uid="uid://b2am4hwqky57l" path="res://audio/sfx/night1BG.wav" id="89_aaldg"]
 [ext_resource type="AudioStream" uid="uid://dihs61j77f2d" path="res://audio/bgm/gameBGN.mp3" id="90_447ya"]
 [ext_resource type="Shader" uid="uid://b4vblwng5ubao" path="res://test1.gdshader" id="94_7w0kr"]
@@ -114,6 +120,7 @@
 [ext_resource type="Texture2D" uid="uid://bw1m3qe7ec3ay" path="res://models/vehicles/Cars/Car 03/car3_red.png" id="111_1gskm"]
 [ext_resource type="Texture2D" uid="uid://c7jfm23qln522" path="res://models/vehicles/Cars/Car 03/car3_yellow.png" id="112_64721"]
 [ext_resource type="Texture2D" uid="uid://ej0sg0mmhp6o" path="res://models/vehicles/Cars/Car 02/car2.png" id="113_0nr6b"]
+[ext_resource type="Texture2D" uid="uid://d0k8g1oe4p0g8" path="res://textures/head/headCarry.png" id="113_8bhth"]
 [ext_resource type="Script" uid="uid://bu2cbcdpbgrfv" path="res://scripts/ai/customer.gd" id="114_lybgc"]
 [ext_resource type="Texture2D" uid="uid://b16gl8d5tgbi4" path="res://models/people/Personajes/Characters_01/Characters_01.png" id="115_f6b0x"]
 [ext_resource type="Animation" uid="uid://cuggltw7bm2d" path="res://models/people/Personajes/Characters_01/walk1.res" id="116_477lw"]
@@ -144,7 +151,10 @@
 [ext_resource type="Texture2D" uid="uid://cpg22lth51e8j" path="res://models/map/6twelve/Textures/Prices.jpg" id="141_kltly"]
 [ext_resource type="Texture2D" uid="uid://dys7ecbj4ag0a" path="res://models/head/head_0.png" id="143_776pv"]
 [ext_resource type="Script" uid="uid://8vmdqwoc23ms" path="res://scripts/scary ahh/screamingHead.gd" id="144_cxtw5"]
-[ext_resource type="AudioStream" uid="uid://bkqbsqhbt7brt" path="res://audio/sfx/scream2.wav" id="145_c4101"]
+[ext_resource type="AudioStream" uid="uid://bekwuy3i4e2fx" path="res://audio/sfx/groan1.mp3" id="145_c4101"]
+[ext_resource type="Texture2D" uid="uid://codqjhv1nn0ji" path="res://models/vehicles/Cars/Car 08/Car8_candy_1.png" id="150_7ugs4"]
+[ext_resource type="ArrayMesh" uid="uid://b6gdj7nqarl6" path="res://models/vehicles/Cars/Car 08/Car8.obj" id="151_epx1u"]
+[ext_resource type="AudioStream" uid="uid://dle704hn40mua" path="res://audio/sfx/candyTruck/mb8.wav" id="152_mh8aq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pl04m"]
 resource_name = "Metal_03"
@@ -3965,8 +3975,20 @@ shadow_mesh = SubResource("ArrayMesh_150t6")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_feexe"]
 data = PackedVector3Array(-0.018099999, 0.0018, -0.0009999999, -0.0174, 0.0025, -0.0009999999, -0.0174, 0.0025, 0.00049999997, -0.0174, 0.0025, 0.00049999997, -0.018099999, 0.0018, 0.00049999997, -0.018099999, 0.0018, -0.0009999999, 0.0174, 0.0025, 0.00049999997, -0.0174, 0.0025, 0.00049999997, -0.0174, 0.0025, -0.0009999999, -0.0174, 0.0025, -0.0009999999, 0.0174, 0.0025, -0.0009999999, 0.0174, 0.0025, 0.00049999997, 0.0174, 0.0025, -0.0009999999, 0.018099999, 0.0018, -0.0009999999, 0.018099999, 0.0018, 0.00049999997, 0.018099999, 0.0018, 0.00049999997, 0.0174, 0.0025, 0.00049999997, 0.0174, 0.0025, -0.0009999999, 0.018099999, -0.0018, 0.00049999997, 0.018099999, 0.0018, 0.00049999997, 0.018099999, 0.0018, -0.0009999999, 0.0177, 0.0016, 0.0009, 0.018099999, 0.0018, 0.00049999997, 0.018099999, -0.0018, 0.00049999997, 0.018099999, -0.0018, 0.00049999997, 0.0177, -0.0016, 0.0009, 0.0177, 0.0016, 0.0009, 0.018099999, 0.0018, -0.0009999999, 0.018099999, -0.0018, -0.0009999999, 0.018099999, -0.0018, 0.00049999997, 0.0174, -0.0025, 0.00049999997, 0.018099999, -0.0018, 0.00049999997, 0.018099999, -0.0018, -0.0009999999, 0.018099999, -0.0018, -0.0009999999, 0.0174, -0.0025, -0.0009999999, 0.0174, -0.0025, 0.00049999997, -0.0174, -0.0025, 0.00049999997, 0.0174, -0.0025, 0.00049999997, 0.0174, -0.0025, -0.0009999999, 0.0174, -0.0025, -0.0009999999, -0.0174, -0.0025, -0.0009999999, -0.0174, -0.0025, 0.00049999997, -0.018099999, -0.0018, 0.00049999997, -0.0174, -0.0025, 0.00049999997, -0.0174, -0.0025, -0.0009999999, -0.0174, -0.0025, -0.0009999999, -0.018099999, -0.0018, -0.0009999999, -0.018099999, -0.0018, 0.00049999997, 0.017199999, -0.0021, 0.0009, 0.0177, 0.0016, 0.0009, 0.0177, -0.0016, 0.0009, 0.017199999, -0.0021, 0.0009, 0.0177, -0.0016, 0.0009, 0.018099999, -0.0018, 0.00049999997, 0.018099999, -0.0018, 0.00049999997, 0.0174, -0.0025, 0.00049999997, 0.017199999, -0.0021, 0.0009, 0.017199999, -0.0021, 0.0009, 0.0174, -0.0025, 0.00049999997, -0.0174, -0.0025, 0.00049999997, -0.0174, -0.0025, 0.00049999997, -0.017199999, -0.0021, 0.0009, 0.017199999, -0.0021, 0.0009, -0.0177, -0.0016, 0.0009, -0.017199999, -0.0021, 0.0009, -0.0174, -0.0025, 0.00049999997, -0.0174, -0.0025, 0.00049999997, -0.018099999, -0.0018, 0.00049999997, -0.0177, -0.0016, 0.0009, 0.017199999, -0.0021, 0.0009, -0.017199999, -0.0021, 0.0009, 0.017199999, 0.0021, 0.0009, 0.017199999, -0.0021, 0.0009, 0.017199999, 0.0021, 0.0009, 0.0177, 0.0016, 0.0009, -0.017199999, -0.0021, 0.0009, -0.0177, -0.0016, 0.0009, 0.017199999, 0.0021, 0.0009, 0.018099999, 0.0018, 0.00049999997, 0.0177, 0.0016, 0.0009, 0.017199999, 0.0021, 0.0009, -0.0177, -0.0016, 0.0009, -0.0177, 0.0016, 0.0009, 0.017199999, 0.0021, 0.0009, 0.017199999, 0.0021, 0.0009, 0.0174, 0.0025, 0.00049999997, 0.018099999, 0.0018, 0.00049999997, 0.0174, 0.0025, 0.00049999997, 0.017199999, 0.0021, 0.0009, -0.017199999, 0.0021, 0.0009, -0.0177, 0.0016, 0.0009, -0.017199999, 0.0021, 0.0009, 0.017199999, 0.0021, 0.0009, -0.017199999, 0.0021, 0.0009, -0.0174, 0.0025, 0.00049999997, 0.0174, 0.0025, 0.00049999997, -0.0174, 0.0025, 0.00049999997, -0.017199999, 0.0021, 0.0009, -0.0177, 0.0016, 0.0009, -0.0177, 0.0016, 0.0009, -0.018099999, 0.0018, 0.00049999997, -0.0174, 0.0025, 0.00049999997, -0.018099999, 0.0018, 0.00049999997, -0.018099999, -0.0018, 0.00049999997, -0.018099999, -0.0018, -0.0009999999, -0.018099999, -0.0018, -0.0009999999, -0.018099999, 0.0018, -0.0009999999, -0.018099999, 0.0018, 0.00049999997, -0.0177, -0.0016, 0.0009, -0.018099999, -0.0018, 0.00049999997, -0.018099999, 0.0018, 0.00049999997, -0.018099999, 0.0018, 0.00049999997, -0.0177, 0.0016, 0.0009, -0.0177, -0.0016, 0.0009, -0.0174, -0.0025, -0.0009999999, -0.018099999, 0.0018, -0.0009999999, -0.018099999, -0.0018, -0.0009999999, -0.0174, -0.0025, -0.0009999999, -0.0174, 0.0025, -0.0009999999, -0.018099999, 0.0018, -0.0009999999, -0.0174, -0.0025, -0.0009999999, 0.0174, -0.0025, -0.0009999999, -0.0174, 0.0025, -0.0009999999, 0.0174, -0.0025, -0.0009999999, 0.018099999, -0.0018, -0.0009999999, -0.0174, 0.0025, -0.0009999999, 0.018099999, -0.0018, -0.0009999999, 0.018099999, 0.0018, -0.0009999999, -0.0174, 0.0025, -0.0009999999, 0.018099999, 0.0018, -0.0009999999, 0.0174, 0.0025, -0.0009999999, -0.0174, 0.0025, -0.0009999999)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mh8aq"]
+render_priority = 0
+shader = ExtResource("48_epx1u")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_width = 1.0
+shader_parameter/shine_angle_x = 0.0
+shader_parameter/shine_angle_y = 0.0
+shader_parameter/shine_angle_z = 0.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyf13"]
 resource_name = "Metal_09"
+next_pass = SubResource("ShaderMaterial_mh8aq")
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("45_17v4f")
 emission_enabled = true
@@ -4101,8 +4123,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wwjk1")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_23b6t"]
-data = PackedVector3Array(0.0099, 0.01, 0.01, 0.0099, -0.01, 0.01, 0.0099, -0.01, -0.01, 0.0099, -0.01, -0.01, 0.0099, 0.01, -0.01, 0.0099, 0.01, 0.01, 0.0299, 0.01, 0.01, 0.0099, 0.01, 0.01, 0.0099, 0.01, -0.01, 0.0099, 0.01, -0.01, 0.0299, 0.01, -0.01, 0.0299, 0.01, 0.01, 0.0299, -0.01, 0.01, 0.0299, 0.01, 0.01, 0.0299, 0.01, -0.01, 0.0299, 0.01, -0.01, 0.0299, -0.01, -0.01, 0.0299, -0.01, 0.01, 0.0099, -0.01, 0.01, 0.0299, -0.01, 0.01, 0.0299, -0.01, -0.01, 0.0299, -0.01, -0.01, 0.0099, -0.01, -0.01, 0.0099, -0.01, 0.01, 0.0299, -0.01, -0.01, 0.0299, 0.01, -0.01, 0.0099, 0.01, -0.01, 0.0099, 0.01, -0.01, 0.0099, -0.01, -0.01, 0.0299, -0.01, -0.01, 0.0099, -0.01, 0.01, 0.0099, 0.01, 0.01, 0.0299, 0.01, 0.01, 0.0299, 0.01, 0.01, 0.0299, -0.01, 0.01, 0.0099, -0.01, 0.01, -0.0099, 0.01, 0.01, -0.0099, 0.01, -0.01, -0.0099, -0.01, -0.01, -0.0099, -0.01, -0.01, -0.0099, -0.01, 0.01, -0.0099, 0.01, 0.01, -0.0299, 0.01, 0.01, -0.0299, 0.01, -0.01, -0.0099, 0.01, -0.01, -0.0099, 0.01, -0.01, -0.0099, 0.01, 0.01, -0.0299, 0.01, 0.01, -0.0299, -0.01, 0.01, -0.0299, -0.01, -0.01, -0.0299, 0.01, -0.01, -0.0299, 0.01, -0.01, -0.0299, 0.01, 0.01, -0.0299, -0.01, 0.01, -0.0099, -0.01, 0.01, -0.0099, -0.01, -0.01, -0.0299, -0.01, -0.01, -0.0299, -0.01, -0.01, -0.0299, -0.01, 0.01, -0.0099, -0.01, 0.01, -0.0299, -0.01, -0.01, -0.0099, -0.01, -0.01, -0.0099, 0.01, -0.01, -0.0099, 0.01, -0.01, -0.0299, 0.01, -0.01, -0.0299, -0.01, -0.01, -0.0099, -0.01, 0.01, -0.0299, -0.01, 0.01, -0.0299, 0.01, 0.01, -0.0299, 0.01, 0.01, -0.0099, 0.01, 0.01, -0.0099, -0.01, 0.01, -0.0391, 0.347, -0.5979, 0.0391, 0.347, -0.5979, 0.039699998, 0.3608, -0.59389997, 0.039699998, 0.3608, -0.59389997, -0.039699998, 0.3608, -0.59389997, -0.0391, 0.347, -0.5979, 0.0391, -0.0041, -0.012499999, 0.039699998, 0.0058999998, -0.0022, 0.039699998, 0.3608, -0.59389997, 0.039699998, 0.3608, -0.59389997, 0.0391, 0.347, -0.5979, 0.0391, -0.0041, -0.012499999, -0.0391, -0.0041, -0.012499999, -0.039699998, 0.0058999998, -0.0022, 0.039699998, 0.0058999998, -0.0022, 0.039699998, 0.0058999998, -0.0022, 0.0391, -0.0041, -0.012499999, -0.0391, -0.0041, -0.012499999, -0.039699998, 0.3608, -0.59389997, -0.039699998, 0.0058999998, -0.0022, -0.0391, -0.0041, -0.012499999, -0.0391, -0.0041, -0.012499999, -0.0391, 0.347, -0.5979, -0.039699998, 0.3608, -0.59389997, 0.0315, 0.3671, -0.5121, 0.0315, 0.0797, -0.0338, -0.0315, 0.0797, -0.0338, -0.0315, 0.0797, -0.0338, -0.0315, 0.3671, -0.5121, 0.0315, 0.3671, -0.5121, 0.0309, 0.0683, -0.0453, 0.0309, 0.3516, -0.5169, -0.0309, 0.3516, -0.5169, -0.0309, 0.3516, -0.5169, -0.0309, 0.0683, -0.0453, 0.0309, 0.0683, -0.0453, 0.0315, 0.3671, -0.5121, 0.039699998, 0.3608, -0.59389997, 0.039699998, 0.0058999998, -0.0022, 0.039699998, 0.0058999998, -0.0022, 0.0315, 0.0797, -0.0338, 0.0315, 0.3671, -0.5121, 0.0391, -0.0041, -0.012499999, 0.0391, 0.347, -0.5979, 0.0309, 0.3516, -0.5169, 0.0309, 0.3516, -0.5169, 0.0309, 0.0683, -0.0453, 0.0391, -0.0041, -0.012499999, 0.0315, 0.0797, -0.0338, 0.039699998, 0.0058999998, -0.0022, -0.039699998, 0.0058999998, -0.0022, -0.039699998, 0.0058999998, -0.0022, -0.0315, 0.0797, -0.0338, 0.0315, 0.0797, -0.0338, -0.0391, -0.0041, -0.012499999, 0.0391, -0.0041, -0.012499999, 0.0309, 0.0683, -0.0453, 0.0309, 0.0683, -0.0453, -0.0309, 0.0683, -0.0453, -0.0391, -0.0041, -0.012499999, -0.039699998, 0.3608, -0.59389997, 0.039699998, 0.3608, -0.59389997, 0.0315, 0.3671, -0.5121, 0.0315, 0.3671, -0.5121, -0.0315, 0.3671, -0.5121, -0.039699998, 0.3608, -0.59389997, -0.0391, 0.347, -0.5979, -0.0309, 0.3516, -0.5169, 0.0309, 0.3516, -0.5169, 0.0309, 0.3516, -0.5169, 0.0391, 0.347, -0.5979, -0.0391, 0.347, -0.5979, -0.039699998, 0.0058999998, -0.0022, -0.039699998, 0.3608, -0.59389997, -0.0315, 0.3671, -0.5121, -0.0315, 0.3671, -0.5121, -0.0315, 0.0797, -0.0338, -0.039699998, 0.0058999998, -0.0022, -0.0391, -0.0041, -0.012499999, -0.0309, 0.0683, -0.0453, -0.0309, 0.3516, -0.5169, -0.0309, 0.3516, -0.5169, -0.0391, 0.347, -0.5979, -0.0391, -0.0041, -0.012499999, 0.0246, 0.3599, -0.44709998, 0.0246, 0.1344, -0.074, 0.0178, 0.1344, -0.074, 0.0178, 0.1344, -0.074, 0.0178, 0.3599, -0.44709998, 0.0246, 0.3599, -0.44709998, 0.0246, 0.3599, -0.44709998, 0.0266, 0.35009998, -0.5218, 0.0266, 0.0769, -0.052899998, 0.0266, 0.0769, -0.052899998, 0.0246, 0.1344, -0.074, 0.0246, 0.3599, -0.44709998, 0.0266, 0.0769, -0.052899998, 0.0154, 0.0769, -0.052899998, 0.0178, 0.1344, -0.074, 0.0178, 0.1344, -0.074, 0.0246, 0.1344, -0.074, 0.0266, 0.0769, -0.052899998, 0.0178, 0.3599, -0.44709998, 0.0154, 0.35009998, -0.5218, 0.0266, 0.35009998, -0.5218, 0.0266, 0.35009998, -0.5218, 0.0246, 0.3599, -0.44709998, 0.0178, 0.3599, -0.44709998, 0.0154, 0.0769, -0.052899998, 0.0154, 0.35009998, -0.5218, 0.0178, 0.3599, -0.44709998, 0.0178, 0.3599, -0.44709998, 0.0178, 0.1344, -0.074, 0.0154, 0.0769, -0.052899998, 0.0026, 0.3599, -0.44709998, 0.0026, 0.1344, -0.074, -0.0042, 0.1344, -0.074, -0.0042, 0.1344, -0.074, -0.0042, 0.3599, -0.44709998, 0.0026, 0.3599, -0.44709998, 0.0026, 0.3599, -0.44709998, 0.0046, 0.35009998, -0.5218, 0.0046, 0.0769, -0.052899998, 0.0046, 0.0769, -0.052899998, 0.0026, 0.1344, -0.074, 0.0026, 0.3599, -0.44709998, 0.0046, 0.0769, -0.052899998, -0.0066, 0.0769, -0.052899998, -0.0042, 0.1344, -0.074, -0.0042, 0.1344, -0.074, 0.0026, 0.1344, -0.074, 0.0046, 0.0769, -0.052899998, -0.0042, 0.3599, -0.44709998, -0.0066, 0.35009998, -0.5218, 0.0046, 0.35009998, -0.5218, 0.0046, 0.35009998, -0.5218, 0.0026, 0.3599, -0.44709998, -0.0042, 0.3599, -0.44709998, -0.0066, 0.0769, -0.052899998, -0.0066, 0.35009998, -0.5218, -0.0042, 0.3599, -0.44709998, -0.0042, 0.3599, -0.44709998, -0.0042, 0.1344, -0.074, -0.0066, 0.0769, -0.052899998, -0.016999999, 0.3599, -0.44709998, -0.016999999, 0.1344, -0.074, -0.023799999, 0.1344, -0.074, -0.023799999, 0.1344, -0.074, -0.023799999, 0.3599, -0.44709998, -0.016999999, 0.3599, -0.44709998, -0.016999999, 0.3599, -0.44709998, -0.015, 0.35009998, -0.5218, -0.015, 0.0769, -0.052899998, -0.015, 0.0769, -0.052899998, -0.016999999, 0.1344, -0.074, -0.016999999, 0.3599, -0.44709998, -0.015, 0.0769, -0.052899998, -0.0262, 0.0769, -0.052899998, -0.023799999, 0.1344, -0.074, -0.023799999, 0.1344, -0.074, -0.016999999, 0.1344, -0.074, -0.015, 0.0769, -0.052899998, -0.023799999, 0.3599, -0.44709998, -0.0262, 0.35009998, -0.5218, -0.015, 0.35009998, -0.5218, -0.015, 0.35009998, -0.5218, -0.016999999, 0.3599, -0.44709998, -0.023799999, 0.3599, -0.44709998, -0.0262, 0.0769, -0.052899998, -0.0262, 0.35009998, -0.5218, -0.023799999, 0.3599, -0.44709998, -0.023799999, 0.3599, -0.44709998, -0.023799999, 0.1344, -0.074, -0.0262, 0.0769, -0.052899998)
+[sub_resource type="SphereShape3D" id="SphereShape3D_8bhth"]
+radius = 0.056091473
 
 [sub_resource type="Animation" id="Animation_aqq5a"]
 resource_name = "Close"
@@ -10154,6 +10176,73 @@ shadow_mesh = SubResource("ArrayMesh_uby1m")
 [sub_resource type="BoxShape3D" id="BoxShape3D_776pv"]
 size = Vector3(0.018951416, 0.12327576, 0.1151886)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mh8aq"]
+radius = 0.019184489
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bhth"]
+albedo_texture = ExtResource("150_7ugs4")
+
+[sub_resource type="Animation" id="Animation_epx1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(20.807728, -0.66445494, -103.104996)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7ugs4"]
+resource_name = "driveScare"
+length = 19.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.002, 5.06, 6.51, 8, 15.528042),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(20.807728, -0.66445494, -103.104996), Vector3(20.807728, -0.66445494, -60.539803), Vector3(20.807728, -0.66445494, 2.3419952), Vector3(16.321262, -0.66445494, 13.580799), Vector3(3.6916237, -0.66445494, 13.86736), Vector3(-130.36856, -0.66445494, 13.867363)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.06, 6.51, 8, 15.528042),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.8728042, 0), Vector3(0, -1.5444243, 0), Vector3(0, -1.5444243, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh8aq"]
+_data = {
+&"RESET": SubResource("Animation_epx1u"),
+&"driveScare": SubResource("Animation_7ugs4")
+}
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_7miiq")
 
@@ -10815,7 +10904,7 @@ transform = Transform3D(60.486614, 0, 0, 0, -2.6439543e-06, 60.486614, 0, -60.48
 layers = 2
 mesh = SubResource("ArrayMesh_3qrae")
 skeleton = NodePath("")
-script = ExtResource("3_cdxxy")
+script = ExtResource("58_2w3t8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="worldEnv/6twelve/Door_03"]
 collision_layer = 2
@@ -10828,6 +10917,9 @@ shape = SubResource("ConcavePolygonShape3D_ytt8d")
 libraries = {
 &"": SubResource("AnimationLibrary_eptys")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="worldEnv/6twelve/Door_03"]
+stream = ExtResource("43_4apai")
 
 [node name="Sink" type="MeshInstance3D" parent="worldEnv/6twelve"]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -12.526797, 0.59398067, -25.183372)
@@ -10942,18 +11034,20 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="worldEnv/6twelve/trash_can_lid/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_uciac")
 
-[node name="trash_can_lid_01" type="MeshInstance3D" parent="worldEnv/6twelve"]
+[node name="trash_can_lid_01" type="MeshInstance3D" parent="worldEnv/6twelve" groups=["interactable"]]
 transform = Transform3D(16.7142, 0, 0, 0, 1.5836216, 1.5836219, 0, -1.5836219, 1.5836216, 4.181592, 1.3603034, -26.069557)
 layers = 2
 mesh = SubResource("ArrayMesh_7f3aj")
 skeleton = NodePath("")
-script = ExtResource("3_cdxxy")
+script = ExtResource("50_8bhth")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="worldEnv/6twelve/trash_can_lid_01"]
-collision_layer = 2
+[node name="headThrowBody" type="StaticBody3D" parent="worldEnv/6twelve/trash_can_lid_01"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.9802322e-08, 0, 2.9802322e-08, 1, -0.013607062, -0.45912266, 0.23067856)
+collision_layer = 4097
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="worldEnv/6twelve/trash_can_lid_01/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_23b6t")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="worldEnv/6twelve/trash_can_lid_01/headThrowBody"]
+transform = Transform3D(0.805, 0, 0, 0, 6.015, 0, 0, 0, 5.275, 0, 0.17537308, -0.3732357)
+shape = SubResource("SphereShape3D_8bhth")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="worldEnv/6twelve/trash_can_lid_01"]
 libraries = {
@@ -11142,11 +11236,11 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_xk1oi")
 
 [node name="Door_02" type="MeshInstance3D" parent="worldEnv/6twelve"]
-transform = Transform3D(107.48795, 4.1857355e-05, -1.829643e-12, 0, 4.698448e-06, 107.48795, -4.1857355e-05, 107.48795, -4.698448e-06, -15.543124, 1.441605, -17.643673)
+transform = Transform3D(102.39051, 32.708496, -1.4297337e-06, 0, 4.698448e-06, 107.48797, -32.708496, 102.39051, -4.4756316e-06, -15.543124, 1.441605, -17.643673)
 layers = 2
 mesh = SubResource("ArrayMesh_3k4lr")
 skeleton = NodePath("")
-script = ExtResource("3_cdxxy")
+script = ExtResource("58_2w3t8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="worldEnv/6twelve/Door_02"]
 transform = Transform3D(1, 1.1368684e-13, -6.7762636e-21, -8.526513e-14, 1.2067512, -1.0658141e-14, 0, 1.0658141e-14, 1.0189494, 0, 0, 0)
@@ -11160,6 +11254,9 @@ shape = SubResource("BoxShape3D_di5qy")
 libraries = {
 &"": SubResource("AnimationLibrary_r7qbo")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="worldEnv/6twelve/Door_02"]
+stream = ExtResource("58_cxtw5")
 
 [node name="Door_04" type="MeshInstance3D" parent="worldEnv/6twelve"]
 transform = Transform3D(-107.48795, 4.1857355e-05, 1.829643e-12, 0, -4.698448e-06, 107.48795, 4.1857355e-05, 107.48795, 4.698448e-06, 4.482114, 1.441605, -13.32493)
@@ -11490,6 +11587,7 @@ size = Vector2i(1024, 720)
 render_target_update_mode = 4
 
 [node name="video1" type="VideoStreamPlayer" parent="worldEnv/Television/SubViewport"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -11523,9 +11621,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("9_5hal3")
-volume_db = -20.0
-autoplay = true
+stream = ExtResource("87_x2fou")
+volume_db = -5.0
 expand = true
 loop = true
 bus = &"SFX"
@@ -11706,7 +11803,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7623153, -0.15396523)
 
 [node name="RayCast3D" type="RayCast3D" parent="characterModel/CharacterBody3D/Camera3D"]
 target_position = Vector3(0, 0, -1.5)
-collision_mask = 6
+collision_mask = 4102
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("17_xytjr")
@@ -11725,6 +11822,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("18_nmn88")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 z_index = 1000
@@ -12032,6 +12130,33 @@ process_mode = 3
 stream = ExtResource("105_lnq25")
 volume_db = 5.0
 
+[node name="carryHead" type="Control" parent="CanvasLayer"]
+visible = false
+z_index = -3580
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 969.0
+offset_top = 469.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/carryHead"]
+z_index = -4096
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9887153
+anchor_top = 0.9814815
+anchor_right = 0.9887153
+anchor_bottom = 0.9814815
+offset_left = -173.0
+offset_top = -163.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("113_8bhth")
+metadata/_edit_use_anchors_ = true
+
 [node name="TimerNode" type="Node" parent="." node_paths=PackedStringArray("endNode", "VSP", "ASP")]
 script = ExtResource("106_j534f")
 endNode = NodePath("../CanvasLayer/End")
@@ -12173,7 +12298,6 @@ transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, -13.267069, 0, 2.635
 visible = false
 collision_layer = 64
 script = ExtResource("114_lybgc")
-door = NodePath("../../../StoreManager/Door")
 speed = 1.0
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Store/CustomerNode/Customers/Customer1"]
@@ -12429,6 +12553,267 @@ libraries = {
 }
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Store/CustomerNode/Customers/Customer1"]
+
+[node name="Customer2" type="CharacterBody3D" parent="Store/CustomerNode/Customers"]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, -13.267069, 0, 2.6357675)
+visible = false
+collision_layer = 64
+script = ExtResource("114_lybgc")
+speed = 1.0
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Store/CustomerNode/Customers/Customer2"]
+transform = Transform3D(-1, -6.1032107e-10, -8.742064e-08, 0, 0.99997556, -0.0069812597, 8.742278e-08, -0.0069812597, -0.99997556, 1.344677, -2.0326273, -6.9978657)
+bones/0/name = "mixamorig_Hips"
+bones/0/parent = -1
+bones/0/rest = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.16606474, 4.92901, 0.009994049)
+bones/0/enabled = true
+bones/0/position = Vector3(-0.0009912252, 4.910071, 0.11885087)
+bones/0/rotation = Quaternion(-0.002802132, 0.67285097, -0.041580845, 0.73860323)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "mixamorig_Spine"
+bones/1/parent = 0
+bones/1/rest = Transform3D(0.982203, 0.18782245, 2.5794438e-17, -0.18782245, 0.982203, 1.3489002e-16, 0, -1.3733416e-16, 1, 0.11192597, 0.5853076, -8.1532003e-17)
+bones/1/enabled = true
+bones/1/position = Vector3(0.11192597, 0.5853076, -8.1532003e-17)
+bones/1/rotation = Quaternion(-0.02148101, 0.010744474, -0.065265946, 0.9975789)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "mixamorig_Spine1"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 9.9766545e-08, -3.982799e-26, -9.9766545e-08, 1, -3.9921184e-19, 6.162976e-33, 3.9921184e-19, 1, 0, 0.69523257, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0.69523257, 0)
+bones/2/rotation = Quaternion(-0.013868392, 0.0002248116, 0.010091095, 0.9998529)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/name = "mixamorig_Spine2"
+bones/3/parent = 2
+bones/3/rest = Transform3D(1, 0, -9.832718e-33, 0, 1, -2.4651903e-32, 9.832718e-33, 2.4651903e-32, 1, 4.440892e-16, 0.7945514, 0)
+bones/3/enabled = true
+bones/3/position = Vector3(1.4210854e-16, 0.7945514, 0)
+bones/3/rotation = Quaternion(-0.0139327925, 0.0004116679, 0.009868052, 0.99985427)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/name = "mixamorig_Neck"
+bones/4/parent = 3
+bones/4/rest = Transform3D(0.982203, -0.18782254, 1.2407709e-23, 0.18782254, 0.982203, -1.3693495e-16, 2.5719457e-17, 1.3449793e-16, 1, 5.7543996e-08, 0.89386964, 1.7347235e-18)
+bones/4/enabled = true
+bones/4/position = Vector3(5.7543996e-08, 0.89386964, 0)
+bones/4/rotation = Quaternion(-0.0038284196, -0.0012497528, 0.14307459, 0.9897037)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/name = "mixamorig_Head"
+bones/5/parent = 4
+bones/5/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18436325, 0.358916, 1.3357371e-16)
+bones/5/enabled = true
+bones/5/position = Vector3(-0.18436325, 0.358916, 1.3357371e-16)
+bones/5/rotation = Quaternion(0.0014932735, 0.011932768, -0.06595838, 0.9977499)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/name = "mixamorig_HeadTop_End"
+bones/6/parent = 5
+bones/6/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6957112, 1.3544018, 5.062617e-16)
+bones/6/enabled = true
+bones/6/position = Vector3(-0.6957112, 1.3544018, 5.062617e-16)
+bones/6/rotation = Quaternion(0, 0, 0, 1)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/name = "mixamorig_LeftShoulder"
+bones/7/parent = 3
+bones/7/rest = Transform3D(0.9984032, 0.0542274, -0.0158274, 0.0005344339, -0.28923535, -0.9572579, -0.05648745, 0.95572084, -0.2888025, 0.021582022, 0.7787393, 0.38882524)
+bones/7/enabled = true
+bones/7/position = Vector3(0.021582022, 0.7787393, 0.38882524)
+bones/7/rotation = Quaternion(0.8380409, -0.052533958, 0.10072667, 0.53364956)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/name = "mixamorig_LeftArm"
+bones/8/parent = 7
+bones/8/rest = Transform3D(0.9973636, -0.06971599, 0.02013589, 0.072565645, 0.9581971, -0.27675363, 9.313226e-10, 0.27748516, 0.9607299, 0, 0.802253, 0)
+bones/8/enabled = true
+bones/8/position = Vector3(1.4210854e-16, 0.802253, 0)
+bones/8/rotation = Quaternion(0.5094299, 0.15005957, 0.020182634, 0.84708685)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/name = "mixamorig_LeftForeArm"
+bones/9/parent = 8
+bones/9/rest = Transform3D(0.97434384, -0.21946418, 0.049895845, 0.2250647, 0.95009816, -0.2160077, -1.8626451e-09, 0.22169556, 0.97511595, 2.220446e-16, 1.9529124, 8.881784e-16)
+bones/9/enabled = true
+bones/9/position = Vector3(-1.4210854e-16, 1.9529124, 0)
+bones/9/rotation = Quaternion(0.0019271673, 0.012793046, 0.012588134, 0.99983716)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/name = "mixamorig_LeftHand"
+bones/10/parent = 9
+bones/10/rest = Transform3D(0.9529635, 0.2955553, 0.067139134, -0.30308515, 0.9292881, 0.21109957, -3.7252903e-09, -0.22151905, 0.97515607, 8.881784e-16, 1.4695212, 8.881784e-16)
+bones/10/enabled = true
+bones/10/position = Vector3(2.842171e-16, 1.4695212, 0)
+bones/10/rotation = Quaternion(0.0512045, -0.26819304, 0.020762315, 0.9617795)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/name = "mixamorig_LeftHandIndex1"
+bones/11/parent = 10
+bones/11/rest = Transform3D(0.99984795, -0.017435376, 0.00032773695, 0.017438456, 0.99967134, -0.018791063, 1.4551915e-11, 0.01879392, 0.9998234, -2.220446e-16, 0.47879553, 8.881784e-16)
+bones/11/enabled = true
+bones/11/position = Vector3(0, 0.47879553, 1.1368684e-15)
+bones/11/rotation = Quaternion(0.066734314, 0.00081499724, 0.0014967757, 0.99776936)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/name = "mixamorig_LeftHandIndex2"
+bones/12/parent = 11
+bones/12/rest = Transform3D(1, -4.054916e-17, -1.1926224e-17, 4.054916e-17, 1, 5.551115e-17, 1.1926224e-17, -5.551115e-17, 1, -2.220446e-16, 0.16950926, -8.881784e-16)
+bones/12/enabled = true
+bones/12/position = Vector3(-1.4210854e-16, 0.16950926, 0)
+bones/12/rotation = Quaternion(0.13332501, 0.0020376926, -0.041452255, 0.990203)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/name = "mixamorig_LeftHandIndex3"
+bones/13/parent = 12
+bones/13/rest = Transform3D(1, 1.4094628e-17, -6.6136333e-18, -1.4094628e-17, 1, 5.551115e-17, 6.6136333e-18, -5.551115e-17, 1, -0.0052298596, 0.24907568, 0.007675273)
+bones/13/enabled = true
+bones/13/position = Vector3(-0.0052298596, 0.24907568, 0.007675273)
+bones/13/rotation = Quaternion(0.04394415, 0.020713694, -0.20397998, 0.9777689)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/name = "mixamorig_LeftHandIndex4"
+bones/14/parent = 13
+bones/14/rest = Transform3D(1, 1.474515e-17, 8.890458e-18, -1.474515e-17, 1, 1.110223e-16, -8.890458e-18, -1.110223e-16, 1, -0.06095284, 0.14178298, 0.0115060825)
+bones/14/enabled = true
+bones/14/position = Vector3(-0.06095284, 0.14178298, 0.0115060825)
+bones/14/rotation = Quaternion(-5.551115e-17, 4.445229e-18, -7.372575e-18, 1)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/name = "mixamorig_RightShoulder"
+bones/15/parent = 3
+bones/15/rest = Transform3D(-0.99827814, 0.05631482, -0.016418837, -0.00054767355, -0.28883636, -0.9573784, -0.058656946, -0.9557208, 0.28836983, 0.02241932, 0.7788994, -0.38882524)
+bones/15/enabled = true
+bones/15/position = Vector3(0.02241932, 0.7788994, -0.38882524)
+bones/15/rotation = Quaternion(0.08442335, -0.5209225, 0.84867346, 0.035578687)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/name = "mixamorig_RightArm"
+bones/16/parent = 15
+bones/16/rest = Transform3D(0.9972603, 0.07105975, -0.020552995, -0.07397239, 0.95799357, -0.27708563, 0, 0.27784684, 0.9606254, -4.440892e-16, 0.802253, -8.881784e-16)
+bones/16/enabled = true
+bones/16/position = Vector3(1.4210852e-16, 0.802253, -1.1368684e-15)
+bones/16/rotation = Quaternion(0.4422316, -0.23912016, -0.0544732, 0.8627198)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/name = "mixamorig_RightForeArm"
+bones/17/parent = 16
+bones/17/rest = Transform3D(0.9744965, 0.2188111, -0.04978318, -0.2244029, 0.9502134, -0.21618943, 0, 0.22184731, 0.97508144, 0, 1.9527926, -1.7763568e-15)
+bones/17/enabled = true
+bones/17/position = Vector3(0, 1.9527926, -1.1368684e-15)
+bones/17/rotation = Quaternion(0.008879824, -0.012742944, -0.057701163, 0.9982131)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/name = "mixamorig_RightHand"
+bones/18/parent = 17
+bones/18/rest = Transform3D(0.9539598, -0.29095092, -0.072857425, 0.29993442, 0.9253873, 0.23172751, 0, -0.24291119, 0.97004855, 4.440892e-16, 1.4689485, -8.881784e-16)
+bones/18/enabled = true
+bones/18/position = Vector3(0, 1.4689485, -1.1368684e-15)
+bones/18/rotation = Quaternion(0.05931271, 0.15651117, 0.0012143299, 0.9858929)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/name = "mixamorig_RightHandIndex1"
+bones/19/parent = 18
+bones/19/rest = Transform3D(0.9993753, 0.035342228, 0.00014126007, -0.03534251, 0.9993673, 0.0039943913, 0, -0.003996888, 0.999992, -2.220446e-16, 0.5202366, 0)
+bones/19/enabled = true
+bones/19/position = Vector3(-1.4210854e-16, 0.5202366, 0)
+bones/19/rotation = Quaternion(0.06032181, -0.0009561624, -0.0048516383, 0.99816674)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/name = "mixamorig_RightHandIndex2"
+bones/20/parent = 19
+bones/20/rest = Transform3D(1, 1.5612511e-17, -1.994932e-17, -1.5612511e-17, 1, 2.7755576e-16, 1.994932e-17, -2.7755576e-16, 1, 2.220446e-16, 0.1635699, -8.881784e-16)
+bones/20/enabled = true
+bones/20/position = Vector3(0, 0.1635699, 0)
+bones/20/rotation = Quaternion(0.10921985, -0.004558045, 0.050451156, 0.992726)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/name = "mixamorig_RightHandIndex3"
+bones/21/parent = 20
+bones/21/rest = Transform3D(1, 3.8163916e-17, -7.806256e-18, -3.8163916e-17, 1, 8.326673e-17, 7.806256e-18, -8.326673e-17, 1, 0.011051877, 0.23885702, 0.019328464)
+bones/21/enabled = true
+bones/21/position = Vector3(0.011051877, 0.23885702, 0.019328464)
+bones/21/rotation = Quaternion(0.04961716, -0.026673773, 0.16544117, 0.9846096)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/name = "mixamorig_RightHandIndex4"
+bones/22/parent = 21
+bones/22/rest = Transform3D(1, 1.733337e-33, -1.5612511e-17, 0, 1, 1.110223e-16, 1.5612511e-17, -1.110223e-16, 1, 0.05532951, 0.14752671, 0.017679302)
+bones/22/enabled = true
+bones/22/position = Vector3(0.05532951, 0.14752671, 0.017679302)
+bones/22/rotation = Quaternion(-5.551115e-17, -7.806256e-18, -4.3333424e-34, 1)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/name = "mixamorig_LeftUpLeg"
+bones/23/parent = 0
+bones/23/rest = Transform3D(-0.99979043, 0.020468637, 0, -0.020438947, -0.99834013, 0.053843472, 0.0011021026, 0.053832192, 0.9985494, 0.12790754, -0.32505187, 0.4441855)
+bones/23/enabled = true
+bones/23/position = Vector3(0.12790754, -0.32505187, 0.4441855)
+bones/23/rotation = Quaternion(0.13871576, 0.08327475, 0.98518246, 0.05691032)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/name = "mixamorig_LeftLeg"
+bones/24/parent = 23
+bones/24/rest = Transform3D(0.9982802, 0.058548752, 0.00293844, -0.058622446, 0.9970254, 0.05003863, -1.1641532e-10, -0.05012483, 0.99874294, -6.938894e-18, 2.2325199, 0)
+bones/24/enabled = true
+bones/24/position = Vector3(0, 2.2325199, 0)
+bones/24/rotation = Quaternion(0.013845458, -0.010765547, 0.104339786, 0.99438703)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/name = "mixamorig_LeftFoot"
+bones/25/parent = 24
+bones/25/rest = Transform3D(0.07725918, 0.8280995, 0.5552317, 2.9802322e-08, 0.55689627, -0.830582, -0.99701107, 0.06417009, 0.043025315, 3.0531133e-16, 1.8724297, 0)
+bones/25/enabled = true
+bones/25/position = Vector3(1.7763578e-17, 1.8724297, 0)
+bones/25/rotation = Quaternion(0.33223897, 0.5672774, -0.36519814, 0.65912366)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/name = "mixamorig_LeftToeBase"
+bones/26/parent = 25
+bones/26/rest = Transform3D(0.99028224, -0.071660824, -0.11918797, 0, 0.85702294, -0.5152783, 0.13907209, 0.5102709, 0.8486946, -2.220446e-16, 0.9481997, -1.4432899e-15)
+bones/26/enabled = true
+bones/26/position = Vector3(7.105426e-17, 0.9481997, -7.105431e-17)
+bones/26/rotation = Quaternion(0.30752534, -0.07101656, 0.014875909, 0.9487695)
+bones/26/scale = Vector3(1, 1, 1)
+bones/27/name = "mixamorig_LeftToe_End"
+bones/27/parent = 26
+bones/27/rest = Transform3D(1, 1.110223e-16, 4.1633363e-17, -1.110223e-16, 1, -9.367507e-17, -4.1633363e-17, 9.367507e-17, 1, 0, 0.36933887, -1.7763568e-17)
+bones/27/enabled = true
+bones/27/position = Vector3(0, 0.36933887, -1.7763568e-17)
+bones/27/rotation = Quaternion(4.6837534e-17, 2.0816682e-17, -5.551115e-17, 1)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/name = "mixamorig_RightUpLeg"
+bones/28/parent = 0
+bones/28/rest = Transform3D(-0.9999318, 0.01167118, 0, -0.01165425, -0.9984813, -0.05384347, -0.00062841683, -0.053839803, 0.9985494, 0.1304388, -0.32505187, -0.4441855)
+bones/28/enabled = true
+bones/28/position = Vector3(0.1304388, -0.32505187, -0.4441855)
+bones/28/rotation = Quaternion(-0.08995579, 0.020513091, 0.9951168, -0.035067946)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/name = "mixamorig_RightLeg"
+bones/29/parent = 28
+bones/29/rest = Transform3D(0.9991368, 0.041488983, -0.002082831, -0.041541234, 0.99788016, -0.050095607, 0, 0.050138887, 0.9987423, -9.818535e-16, 2.2322042, 2.220446e-16)
+bones/29/enabled = true
+bones/29/position = Vector3(4.440888e-18, 2.2322042, 1.4210854e-16)
+bones/29/rotation = Quaternion(-0.0095247235, 0.082352124, 0.043361023, 0.995614)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/name = "mixamorig_RightFoot"
+bones/30/parent = 29
+bones/30/rest = Transform3D(-0.07621157, 0.8334279, 0.54734796, 0, 0.5489444, -0.8358589, -0.9970917, -0.06370211, -0.041835904, -2.7755576e-16, 1.8719043, 1.110223e-16)
+bones/30/enabled = true
+bones/30/position = Vector3(-8.881776e-18, 1.8719043, 7.105427e-17)
+bones/30/rotation = Quaternion(0.36232737, 0.63916314, -0.37710926, 0.56389546)
+bones/30/scale = Vector3(1, 1, 1)
+bones/31/name = "mixamorig_RightToeBase"
+bones/31/parent = 30
+bones/31/rest = Transform3D(0.989281, 0.07509202, 0.12523681, 3.7252903e-09, 0.85764414, -0.5142436, -0.1460242, 0.5087315, 0.8484511, 0, 0.9501996, -1.110223e-16)
+bones/31/enabled = true
+bones/31/position = Vector3(0, 0.9501996, 7.105427e-17)
+bones/31/rotation = Quaternion(0.32616472, 0.07621997, -0.013799371, 0.9421342)
+bones/31/scale = Vector3(1, 1, 1)
+bones/32/name = "mixamorig_RightToe_End"
+bones/32/parent = 31
+bones/32/rest = Transform3D(1, 2.7755576e-17, 2.7755576e-17, -2.7755576e-17, 1, -9.7144515e-17, -2.7755576e-17, 9.7144515e-17, 1, 0, 0.3624013, 0)
+bones/32/enabled = true
+bones/32/position = Vector3(0, 0.3624013, 0)
+bones/32/rotation = Quaternion(4.8572257e-17, 1.3877788e-17, -1.3877788e-17, 1)
+bones/32/scale = Vector3(1, 1, 1)
+
+[node name="Characters_01" type="MeshInstance3D" parent="Store/CustomerNode/Customers/Customer2/Skeleton3D"]
+mesh = SubResource("ArrayMesh_giay8")
+skin = SubResource("Skin_ix7yq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Store/CustomerNode/Customers/Customer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_y3yog")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Store/CustomerNode/Customers/Customer2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2279744, 4.815418, -6.956034)
+shape = SubResource("CapsuleShape3D_gpxe3")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Store/CustomerNode/Customers/Customer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_j2u4e")
+}
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Store/CustomerNode/Customers/Customer2"]
 
 [node name="StoreSpots" type="Node3D" parent="Store"]
 
@@ -12721,21 +13106,57 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Store/NavigationRegion3D/Glasses/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_sprq5")
 
-[node name="Cube_040" type="MeshInstance3D" parent="."]
+[node name="Scary" type="Node3D" parent="."]
+
+[node name="Cube_040" type="MeshInstance3D" parent="Scary" groups=["interactable"]]
 transform = Transform3D(-1.3132881, -29.971241, -1.3100845e-06, 0, -1.3113416e-06, 30, -29.971241, 1.3132881, 5.7405646e-08, -17.681198, 0.36137056, -16.864775)
 mesh = SubResource("ArrayMesh_cxtw5")
 skeleton = NodePath("")
 script = ExtResource("144_cxtw5")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Cube_040"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Scary/Cube_040"]
 stream = ExtResource("145_c4101")
 
-[node name="Area3D" type="Area3D" parent="Cube_040"]
+[node name="CutsceneArea" type="Area3D" parent="Scary/Cube_040"]
 transform = Transform3D(0.9999999, 3.7252903e-09, 2.220446e-16, -3.7252903e-09, 0.9999999, -2.6020852e-15, 2.220446e-16, 4.4964032e-15, 0.99999994, -0.085923314, 0.003764987, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_040/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scary/Cube_040/CutsceneArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 9.298118e-16, 1.2412293e-13, 9.436896e-16, 1, -0.02835977, 0.00024086237, 0.057350837)
 shape = SubResource("BoxShape3D_776pv")
+
+[node name="taskArea" type="StaticBody3D" parent="Scary/Cube_040"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scary/Cube_040/taskArea"]
+transform = Transform3D(0.9999999, 3.7252903e-09, 2.220446e-16, -3.7252903e-09, 0.9999999, -2.6020852e-15, 2.220446e-16, 4.4964032e-15, 0.99999994, 0, 0, 0)
+shape = SubResource("SphereShape3D_mh8aq")
+
+[node name="CarModule" type="Node3D" parent="Scary"]
+
+[node name="Car8" type="MeshInstance3D" parent="Scary"]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 20.807728, -0.66445494, -103.104996)
+material_override = SubResource("StandardMaterial3D_8bhth")
+mesh = ExtResource("151_epx1u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Scary/Car8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.998086, 0.95548534, 2.9999952)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Scary/Car8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.007865, 0.95548534, 2.9999943)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Scary/Car8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018615723, 3.1483746, 1.158968)
+stream = ExtResource("152_mh8aq")
+volume_db = 5.0
+max_distance = 70.0
+bus = &"SFX"
+doppler_tracking = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scary/Car8"]
+libraries = {
+&"": SubResource("AnimationLibrary_mh8aq")
+}
 
 [connection signal="body_shape_entered" from="worldEnv/6twelve/Monitor/interactArea" to="worldEnv/6twelve/Monitor" method="_on_interact_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="worldEnv/6twelve/Monitor/interactArea" to="worldEnv/6twelve/Monitor" method="_on_interact_area_body_shape_exited"]
@@ -12750,7 +13171,8 @@ shape = SubResource("BoxShape3D_776pv")
 [connection signal="animation_finished" from="Store/CustomerNode/Cars/Car2/AnimationPlayer" to="Store/CustomerSpawner" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Store/CustomerNode/Cars/Car3/AnimationPlayer" to="Store/CustomerSpawner" method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Store/CustomerNode/Cars/Car4/AnimationPlayer" to="Store/CustomerSpawner" method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="Cube_040/Area3D" to="Cube_040" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Scary/Cube_040/CutsceneArea" to="Scary/Cube_040" method="_on_area_3d_body_entered"]
+[connection signal="animation_finished" from="Scary/Car8/AnimationPlayer" to="Scary/Cube_040" method="_on_animation_player_animation_finished"]
 
 [editable path="worldEnv/Cars/Car52"]
 [editable path="worldEnv/bgEnv/walkBys/Walking(3)"]

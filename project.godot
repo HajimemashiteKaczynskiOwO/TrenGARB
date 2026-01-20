@@ -22,6 +22,8 @@ nightCheck="*res://scripts/global/glob_night_check.gd"
 
 [display]
 
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
 [dotnet]
@@ -46,6 +48,7 @@ folder_colors={
 [global_group]
 
 tasks=""
+interactable=""
 
 [input]
 
@@ -100,3 +103,7 @@ menu={
 sections/show_sections=true
 sections/show_graphs=true
 afk/afk_timer=300
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

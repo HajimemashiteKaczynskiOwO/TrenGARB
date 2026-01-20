@@ -6,9 +6,9 @@ extends Node3D
 @export var door_point: Marker3D = null
 
 # how often (in game hours) to check for possible arrivals
-const CHECK_INTERVAL_HOURS := 0.3
+const CHECK_INTERVAL_HOURS := 0.5
 # probability a customer arrives each check (0.0–1.0)
-const ARRIVAL_CHANCE := 0.3
+const ARRIVAL_CHANCE := 0.7
 
 var last_check_hour: float = 0.0
 var rng := RandomNumberGenerator.new()
@@ -28,7 +28,7 @@ func _process(_delta):
 		return
 
 	# check every 0.5 in-game hours
-	if current_hours - last_check_hour >= CHECK_INTERVAL_HOURS:
+	if current_hours - last_check_hour >= CHECK_INTERVAL_HOURS and nightCheck.night != 3:
 		last_check_hour = current_hours
 		_try_spawn_customer()
 
@@ -65,6 +65,13 @@ func _spawn_random_car_customer():
 		_: anim_name = "DriveIn1"
 
 	anim_player.play(anim_name)
+	#driveOut
+	match car_name:
+		"Car1": anim_name = "driveOut"
+		"Car2": anim_name = "driveOut2"
+		"Car3": anim_name = "driveOut3"
+		"Car4": anim_name = "driveOut4"
+		_: anim_name = "DriveOut1"
 
 	# after animation finishes, trigger customer spawn
 	await anim_player.animation_finished

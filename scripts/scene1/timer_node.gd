@@ -4,9 +4,10 @@ extends Node
 @export var endNode : Control = null
 @export var VSP : VideoStreamPlayer = null
 @export var ASP : AudioStreamPlayer2D = null
+signal time_passed
 
 var game_time_seconds: float = 0.0
-const SECONDS_PER_HOUR: float = 4
+const SECONDS_PER_HOUR: float = 3
 const HOURS_IN_DAY: int = 6
 var running: bool = false
 
@@ -17,17 +18,20 @@ func _ready():
 func _process(delta: float):
 	if running:
 		game_time_seconds += delta
-		if game_time_seconds >= HOURS_IN_DAY * SECONDS_PER_HOUR:
+		
+		var current_hour = int(game_time_seconds / SECONDS_PER_HOUR)
+		if current_hour >= HOURS_IN_DAY and nightCheck.night != 3:
+			running = false
 			night_passed()
-
+		elif nightCheck.night == 3:
+			running = false
+			
 			
 func night_passed():
-	nightCheck.night_passed()
 	endNode.visible = true
 	ASP.play()
 	VSP.play()
 	get_tree().paused = true
-	
 
 
 func start_timer():
@@ -44,6 +48,18 @@ func get_hour_progress() -> float:
 
 
 func _on_video_stream_player_finished():
-	print(nightCheck.night)
+	nightCheck.night_passed()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/intros/intro1.tscn")
+	await get_tree().process_frame
+	match nightCheck.night:
+		0:
+			print("Its 0.")
+		1:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://scenes/minigame/min1.tscn")
+		2:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://scenes/minigame/min2.tscn")
+		3:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://scenes/intros/intro1.tscn")

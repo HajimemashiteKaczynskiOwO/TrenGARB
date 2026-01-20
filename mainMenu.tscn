@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://bmn6f7lw5bue7"]
+[gd_scene load_steps=20 format=3 uid="uid://bmn6f7lw5bue7"]
 
 [ext_resource type="PackedScene" uid="uid://dwgqx5pietri" path="res://models/map/menuTSCN/grassyBot.fbx" id="1_wut1r"]
 [ext_resource type="Script" uid="uid://caqserwoy1gll" path="res://scripts/buttons/menu/onPlay.gd" id="3_w7d22"]
 [ext_resource type="Script" uid="uid://cv3rt5rr2ud1a" path="res://scripts/buttons/menu/options_button.gd" id="4_c3jr6"]
+[ext_resource type="Script" uid="uid://byyjadpa18dxa" path="res://scripts/menu/mainMenu.gd" id="4_fy5us"]
 [ext_resource type="Script" uid="uid://bn6qku3uso0tx" path="res://volumeScript.gd" id="4_wked4"]
 [ext_resource type="LabelSettings" uid="uid://3l7r8fnrrw54" path="res://textures/textTextures/mainMenu.tres" id="5_hvu0j"]
 [ext_resource type="VideoStream" uid="uid://x6ms0jqcu7wc" path="res://videos/mainMenu.ogv" id="9_fy5us"]
@@ -120,6 +121,7 @@ max_distance = 30.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -500
+script = ExtResource("4_fy5us")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
 z_index = -50
@@ -149,6 +151,26 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="continueButton" type="Button" parent="CanvasLayer/mainMenu"]
+visible = false
+z_index = 100
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -117.0
+offset_right = 282.0
+offset_bottom = -53.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_83s16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w7d22")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wc2lj")
+text = "CONTINUE NIGHT "
+script = ExtResource("3_w7d22")
+
 [node name="playButton" type="Button" parent="CanvasLayer/mainMenu"]
 z_index = 100
 layout_mode = 1
@@ -156,9 +178,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 101.0
-offset_top = -173.0
+offset_top = -27.0
 offset_right = 257.0
-offset_bottom = -109.0
+offset_bottom = 37.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
@@ -174,9 +196,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 101.0
-offset_top = -90.0
+offset_top = 82.0
 offset_right = 257.0
-offset_bottom = -26.0
+offset_bottom = 146.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -274,9 +296,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 101.0
-offset_top = -7.0
+offset_top = 193.0
 offset_right = 257.0
-offset_bottom = 57.0
+offset_bottom = 257.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
@@ -291,6 +313,7 @@ position = Vector2(253, 192.00002)
 scale = Vector2(0.545, 0.54499996)
 texture = ExtResource("9_o0ref")
 
+[connection signal="pressed" from="CanvasLayer/mainMenu/continueButton" to="CanvasLayer" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/mainMenu/playButton" to="CanvasLayer/mainMenu/playButton" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/mainMenu/optionsButton" to="CanvasLayer/mainMenu/optionsButton" method="_on_pressed"]
 [connection signal="value_changed" from="CanvasLayer/mainMenu/optionsButton/Panel/Label/HSlider" to="CanvasLayer/mainMenu/optionsButton/Panel/Label" method="_on_h_slider_value_changed"]

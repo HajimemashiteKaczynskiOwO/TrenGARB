@@ -1,7 +1,11 @@
 extends Control
 @onready var con = $Button
+@onready var skip = $"../skipButton/skipButton"
+
 var level1 = "res://scene1.tscn"
-var level2 = "res://scene2.tscn"
+var level2 = "res://scenes/nights/scene2.tscn"
+var level3 = "res://scenes/nights/scene3.tscn"
+var level4 = "res://scenes/nights/scene4.tscn"
 var nextLvl = null
 
 func _on_video_stream_player_finished():
@@ -13,13 +17,13 @@ func _ready():
 			nextLvl = level1 
 			
 		1:
-			nextLvl = "res://scene2.tscn"
+			nextLvl = level2
 			con.text = "BEGIN YOUR SECOND SHIFT"
 		2:
-			nextLvl = level2
+			nextLvl = level3
 			con.text = "BEGIN YOUR THIRD SHIFT"
 		3:
-			nextLvl = level2 
+			nextLvl = level4
 			con.text = "BEGIN YOUR FOURTH SHIFT"
 		4:
 			nextLvl = level2
