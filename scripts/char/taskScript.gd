@@ -24,17 +24,14 @@ func _ready():
 	if clockTask:
 		tasks.append(clockTask)
 		clockTask.toggled.connect(_on_task_toggled.bind(clockTask))
-		print("Linked clock-in task:", clockTask.text)
 	else:
 		push_warning("⚠️ No clockTask assigned in Inspector!")
 	#after that is done, add these:
 	match nightCheck.night:
 		0:
-			print("It's nnight one")
 			staged_tasks.append({"name": "Restock the Cooler", "is_special": false})
 			staged_tasks.append({"name": "Put the boxes on the shelf", "is_special": false})
 		1:
-			print("It's nnight two")
 			staged_tasks.append({"name": "Restock the food on the empty shelf.", "is_special": false})
 		3:
 			staged_tasks.append({"name": "Investigate the TV.", "is_special": false})
@@ -52,7 +49,6 @@ func add_task(name: String, is_special := false):
 		task.set_meta("special", true)
 
 	task.toggled.connect(_on_task_toggled.bind(task))
-	print("Added task:", name)
 
 
 func _on_task_toggled(button_pressed: bool, task: CheckBox):
@@ -72,7 +68,6 @@ func _on_task_toggled(button_pressed: bool, task: CheckBox):
 func _on_special_task_completed(task: CheckBox):
 	add_task("Reset backup systems")
 	add_task("Reboot cameras")
-	print("Special task completed! Added extra tasks.")
 	
 	
 	
@@ -80,7 +75,6 @@ func _do_clock_in():
 	if has_clocked_in:
 		return
 	has_clocked_in = true
-	print("player locked in bru")
 
 	#unlock staged tasks
 	if staged_tasks.size()>0:
@@ -88,12 +82,10 @@ func _do_clock_in():
 	
 	#start globTimer
 	if localTimer:
-		print("Timer found:", localTimer)
 		if localTimer.has_method("start_timer"):
-			print("Starting timer…")
 			localTimer.start_timer()
 	else:
-		print("❌ No TimerNode found!")
+		pass
 		#fading in
 	var timeLabel = $"../TimeLabel"
 	if timeLabel:
@@ -105,12 +97,10 @@ func _unlock_staged_tasks():
 	for t in staged_tasks:
 		add_task(t["name"], t["is_special"])
 	staged_tasks.clear()
-	print("🟢 Staged tasks unlocked!")
 	
 func _on_all_tasks_complete():
 	doneLabel.visible = true
 	doneSound.play()
-	print("🎉 All tasks complete!")
 
 
 func mark_task_complete(task_name: String):

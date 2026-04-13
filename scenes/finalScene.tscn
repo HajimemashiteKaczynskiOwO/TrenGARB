@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuwem3d1hrsf2"]
+[gd_scene load_steps=10 format=3 uid="uid://cuwem3d1hrsf2"]
 
+[ext_resource type="VideoStream" uid="uid://niemnqc3dr3" path="res://videos/lastNight/finalCutscene.ogv" id="1_6s7t2"]
 [ext_resource type="Script" uid="uid://c1jo2e1gmmk7i" path="res://scenes/final_scene.gd" id="1_re1bl"]
-[ext_resource type="VideoStream" uid="uid://c28xd85rmtkvx" path="res://videos/night3(1).ogv" id="2_6s7t2"]
+[ext_resource type="VideoStream" uid="uid://btkj1y6ye3jxk" path="res://videos/nightFinal.ogv" id="3_vfp6b"]
+[ext_resource type="Script" uid="uid://yilkhkjp5tcg" path="res://addons/frog_subtitles/nodes/VideoStreamSubtitles.cs" id="4_0vw2w"]
+[ext_resource type="Resource" uid="uid://bghmlajq40l17" path="res://videos/subtitles/nightFinal.srt" id="5_g71qv"]
+[ext_resource type="Script" uid="uid://b12agn56xnjtw" path="res://scripts/menu/menuScript.gd" id="6_g71qv"]
+[ext_resource type="Shader" uid="uid://b4vblwng5ubao" path="res://test1.gdshader" id="7_x88xh"]
+[ext_resource type="Resource" uid="uid://ktqv0hib6gfw" path="res://videos/subtitles/finalCutscene.srt" id="8_x88xh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrjgx"]
+shader = ExtResource("7_x88xh")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
 
 [node name="End" type="Control"]
 process_mode = 3
@@ -21,9 +38,82 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_6s7t2")
-speed_scale = 5.0
+stream = ExtResource("1_6s7t2")
 autoplay = true
 expand = true
 
+[node name="FinalNight" type="VideoStreamPlayer" parent="VideoStreamPlayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = 83.0
+offset_right = -162.66669
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_vfp6b")
+expand = true
+
+[node name="VideoStreamSubtitles" type="RichTextLabel" parent="VideoStreamPlayer" node_paths=PackedStringArray("player")]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 0.9607843)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 0.8666667)
+theme_override_colors/table_border = Color(0, 0, 0, 0.9411765)
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_0vw2w")
+player = NodePath("../FinalNight")
+subtitles = ExtResource("5_g71qv")
+metadata/_custom_type_script = "uid://yilkhkjp5tcg"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("6_g71qv")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_hrjgx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VideoStreamSubtitles" type="RichTextLabel" parent="." node_paths=PackedStringArray("player")]
+z_index = 4096
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -398.0
+offset_top = -72.0
+offset_right = 403.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.84313726)
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("4_0vw2w")
+player = NodePath("../VideoStreamPlayer")
+subtitles = ExtResource("8_x88xh")
+metadata/_custom_type_script = "uid://yilkhkjp5tcg"
+
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="VideoStreamPlayer/FinalNight" to="." method="_on_final_night_finished"]

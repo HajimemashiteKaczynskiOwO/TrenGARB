@@ -1,0 +1,638 @@
+[gd_scene load_steps=38 format=3 uid="uid://dtf402expxpkp"]
+
+[ext_resource type="Script" uid="uid://ocanvqx8bc0c" path="res://plrNightmare.gd" id="1_eeskm"]
+[ext_resource type="Script" uid="uid://cel0705vfrhv1" path="res://nightmare.gd" id="1_m3jco"]
+[ext_resource type="Script" uid="uid://b12agn56xnjtw" path="res://scripts/menu/menuScript.gd" id="2_hhk27"]
+[ext_resource type="Texture2D" uid="uid://cp2cqvhbcsynk" path="res://textures/ui/crosshair.png" id="3_hyk0k"]
+[ext_resource type="Shader" uid="uid://b4vblwng5ubao" path="res://test1.gdshader" id="4_eeskm"]
+[ext_resource type="Script" uid="uid://cv3rt5rr2ud1a" path="res://scripts/buttons/menu/options_button.gd" id="5_m3jco"]
+[ext_resource type="LabelSettings" uid="uid://3l7r8fnrrw54" path="res://textures/textTextures/mainMenu.tres" id="6_65eh5"]
+[ext_resource type="Script" uid="uid://bn6qku3uso0tx" path="res://volumeScript.gd" id="7_paqlx"]
+[ext_resource type="Script" uid="uid://caqserwoy1gll" path="res://scripts/buttons/menu/onPlay.gd" id="8_wdck1"]
+[ext_resource type="Script" uid="uid://6mimfuj7isut" path="res://scripts/time_label.gd" id="9_g1y57"]
+[ext_resource type="Script" uid="uid://onw6jyqiejit" path="res://scripts/char/taskScript.gd" id="10_505ee"]
+[ext_resource type="AudioStream" uid="uid://cnso2al3dbo60" path="res://audio/sfx/taskDone.wav" id="11_jr40e"]
+[ext_resource type="AudioStream" uid="uid://c7abped4xx1qd" path="res://audio/sfx/monitorSound.mp3" id="12_73x7l"]
+[ext_resource type="AudioStream" uid="uid://c8vnaqpdfva1a" path="res://audio/sfx/noSound.wav" id="13_d7rdt"]
+[ext_resource type="VideoStream" uid="uid://caey3iqo5tgkk" path="res://textures/ui/shiftDone_1.ogv" id="14_gsvpe"]
+[ext_resource type="AudioStream" uid="uid://dy04crlpwyilq" path="res://audio/sfx/shiftDone.wav" id="15_6wdc3"]
+[ext_resource type="Script" uid="uid://c18kslyryjjs5" path="res://scripts/ai/moser_spawnerMain.gd" id="16_eeskm"]
+[ext_resource type="PackedScene" uid="uid://bugs8t3bfgw6t" path="res://intelligence/lobotomy.tscn" id="16_hhk27"]
+[ext_resource type="Script" uid="uid://dacnbyl40r61g" path="res://scripts/ai/moser_spawner.gd" id="16_hyk0k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_14o84"]
+sky_top_color = Color(0.30588236, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_byv06"]
+sky_material = SubResource("ProceduralSkyMaterial_14o84")
+
+[sub_resource type="Environment" id="Environment_f7y4k"]
+background_mode = 2
+sky = SubResource("Sky_byv06")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2yh0p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65b15"]
+shader = ExtResource("4_eeskm")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl0sg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0.3075619, 2.9480086e-07, 1.5642495e-07, 1)
+border_blend = true
+corner_detail = 1
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0q4g"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0, 0, 0, 1)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7mt8"]
+bg_color = Color(0.4487638, 0.04063718, 0.06645635, 1)
+border_width_left = 16
+border_width_bottom = 16
+border_color = Color(0.30588236, 0, 0, 1)
+border_blend = true
+corner_detail = 1
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6mhl"]
+bg_color = Color(0, 0, 0, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 1
+shadow_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_gsbii"]
+font_size = 82
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_avfhb"]
+vertices = PackedVector3Array(-149.5, 0.35000002, -149.5, -149.5, 0.35000002, 149.5, 149.5, 0.35000002, 149.5, 149.5, 0.35000002, -149.5, -2, 21.15, -25.25, -2, 21.15, -21, 2, 21.15, -21, 2, 21.15, -25.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+cell_height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhk27"]
+albedo_color = Color(0.08796584, 0.1660941, 0.20867214, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyk0k"]
+albedo_color = Color(1, 0, 0, 1)
+grow_amount = -16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_eeskm"]
+material = SubResource("StandardMaterial3D_hyk0k")
+
+[sub_resource type="Curve" id="Curve_m3jco"]
+_data = [Vector2(0.013215862, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.036636114), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_65eh5"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeskm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_m3jco"]
+material = SubResource("StandardMaterial3D_eeskm")
+radial_segments = 4
+rings = 1
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_m3jco")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f7y4k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="characterModel" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4157724, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Player/characterModel" node_paths=PackedStringArray("PLAYER_COLLIDER") groups=["player"]]
+collision_layer = 3
+collision_mask = 259
+script = ExtResource("1_eeskm")
+PLAYER_COLLIDER = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/characterModel/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_2yh0p")
+
+[node name="Camera3D" type="Camera3D" parent="Player/characterModel/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7623153, -0.15396523)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/characterModel/CharacterBody3D/Camera3D"]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+script = ExtResource("2_hhk27")
+
+[node name="crossHair" type="TextureRect" parent="Player/CanvasLayer"]
+z_index = 4096
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_hyk0k")
+
+[node name="ColorRect" type="ColorRect" parent="Player/CanvasLayer"]
+z_index = 1000
+material = SubResource("ShaderMaterial_65b15")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" type="Control" parent="Player/CanvasLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playButton" type="Button" parent="Player/CanvasLayer/menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -123.0
+offset_right = 78.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl0sg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t0q4g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p7mt8")
+text = "CONTINUE"
+
+[node name="optionsButton" type="Button" parent="Player/CanvasLayer/menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -32.0
+offset_right = 78.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl0sg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t0q4g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p7mt8")
+text = "OPTIONS"
+script = ExtResource("5_m3jco")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Player/CanvasLayer/menu/optionsButton"]
+visible = false
+layout_mode = 0
+offset_left = 421.0
+offset_top = -87.0
+offset_right = 461.0
+offset_bottom = -47.0
+scale = Vector2(9.440001, 7.4211955)
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6mhl")
+
+[node name="Label" type="Label" parent="Player/CanvasLayer/menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 0.95338976
+offset_top = 2.6949835
+offset_right = 58.95339
+offset_bottom = 25.694984
+scale = Vector2(0.19974326, 0.24390042)
+text = "SFX"
+label_settings = ExtResource("6_65eh5")
+script = ExtResource("7_paqlx")
+
+[node name="HSlider" type="HSlider" parent="Player/CanvasLayer/menu/optionsButton/Panel/Label"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="Label2" type="Label" parent="Player/CanvasLayer/menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 1.2711864
+offset_top = 13.070671
+offset_right = 118.27119
+offset_bottom = 36.07067
+scale = Vector2(0.19974326, 0.24390042)
+text = "Music"
+label_settings = ExtResource("6_65eh5")
+script = ExtResource("7_paqlx")
+
+[node name="musicSlider" type="HSlider" parent="Player/CanvasLayer/menu/optionsButton/Panel/Label2"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="Label3" type="Label" parent="Player/CanvasLayer/menu/optionsButton/Panel"]
+layout_mode = 0
+offset_left = 1.2711864
+offset_top = 22.772614
+offset_right = 118.27119
+offset_bottom = 45.772614
+scale = Vector2(0.19974326, 0.24390042)
+text = "Dialogue"
+label_settings = ExtResource("6_65eh5")
+script = ExtResource("7_paqlx")
+
+[node name="talkSlider" type="HSlider" parent="Player/CanvasLayer/menu/optionsButton/Panel/Label3"]
+layout_mode = 0
+offset_left = 2.651709
+offset_top = 25.413906
+offset_right = 173.95209
+offset_bottom = 41.413906
+max_value = 1.5
+step = 0.001
+value = 0.75
+
+[node name="quit2Button" type="Button" parent="Player/CanvasLayer/menu"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.58179015
+anchor_right = 0.5
+anchor_bottom = 0.58179015
+offset_left = -78.0
+offset_top = -32.0
+offset_right = 78.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_vl0sg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t0q4g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p7mt8")
+text = "QUIT TO MENU"
+script = ExtResource("8_wdck1")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Player/CanvasLayer/menu"]
+z_index = -1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05490196, 0.05490196, 0.05490196, 0.63529414)
+
+[node name="TimeLabel" type="Label" parent="Player/CanvasLayer" groups=["time_label"]]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 137.0
+grow_horizontal = 0
+label_settings = SubResource("LabelSettings_gsbii")
+script = ExtResource("9_g1y57")
+
+[node name="Label" type="Label" parent="Player/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 91.0
+offset_right = 20.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="taskList" type="Control" parent="Player/CanvasLayer" node_paths=PackedStringArray("clockTask") groups=["task_ui", "tasks"]]
+visible = false
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 314.0
+offset_bottom = 224.0
+script = ExtResource("10_505ee")
+clockTask = NodePath("VBoxContainer/CheckBox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/CanvasLayer/taskList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 60.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.6, 1.6)
+mouse_filter = 2
+
+[node name="CheckBox" type="CheckBox" parent="Player/CanvasLayer/taskList/VBoxContainer"]
+layout_mode = 2
+text = "Clock in at the computer to start your shift."
+
+[node name="doneSound" type="AudioStreamPlayer2D" parent="Player/CanvasLayer/taskList"]
+stream = ExtResource("11_jr40e")
+
+[node name="monitorSound" type="AudioStreamPlayer2D" parent="Player/CanvasLayer/taskList"]
+stream = ExtResource("12_73x7l")
+bus = &"SFX"
+
+[node name="noSound" type="AudioStreamPlayer2D" parent="Player/CanvasLayer/taskList"]
+stream = ExtResource("13_d7rdt")
+
+[node name="doneLabel" type="Label" parent="Player/CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_right = 212.5
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 23
+text = "GREAT JOB! ALL TASKS ARE COMPLETE!
+WORK THE REST OF YOUR SHIFT."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="taskBar" type="ProgressBar" parent="Player/CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 173.0
+offset_right = 301.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer"]
+visible = false
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="interactLabel" type="Label" parent="Player/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.595
+anchor_right = 0.5
+anchor_bottom = 0.595
+offset_left = -20.0
+offset_top = -2.560028
+offset_right = 20.0
+offset_bottom = 20.439972
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="End" type="Control" parent="Player/CanvasLayer"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Player/CanvasLayer/End"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+audio_track = 1
+stream = ExtResource("14_gsvpe")
+volume_db = 23.999992
+expand = true
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player/CanvasLayer/End"]
+process_mode = 3
+stream = ExtResource("15_6wdc3")
+volume_db = 5.0
+
+[node name="show" type="Label" parent="Player/CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_avfhb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+use_collision = true
+size = Vector3(300, 0.5, 300)
+material = SubResource("StandardMaterial3D_hhk27")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 18.348225, -23.048244)
+use_collision = true
+size = Vector3(5, 5, 5.4570313)
+
+[node name="Marker3D" type="Marker3D" parent="NavigationRegion3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 3.5527137e-15, 0, -3.5527137e-15, 0.9999999, 0, 0, -22)
+
+[node name="MoserSpawner" type="Node3D" parent="." node_paths=PackedStringArray("show")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4323692, 37.962273)
+script = ExtResource("16_eeskm")
+sceneM = ExtResource("16_hhk27")
+show = NodePath("../Player/CanvasLayer/show")
+
+[node name="CommonEf" type="CPUParticles3D" parent="MoserSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+amount = 128
+explosiveness = 0.17
+randomness = 1.0
+mesh = SubResource("SphereMesh_eeskm")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 18.4
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="SpawnEf" type="CPUParticles3D" parent="MoserSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+mesh = SubResource("CapsuleMesh_m3jco")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="Marker3D" type="Marker3D" parent="MoserSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59451, 0)
+
+[node name="Timer" type="Timer" parent="MoserSpawner"]
+autostart = true
+
+[node name="MoserSpawner2" type="Node3D" parent="." node_paths=PackedStringArray("show")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.001335, -2.4323692, 37.962273)
+script = ExtResource("16_hyk0k")
+sceneM = ExtResource("16_hhk27")
+show = NodePath("../Player/CanvasLayer/show")
+
+[node name="CommonEf" type="CPUParticles3D" parent="MoserSpawner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+amount = 128
+explosiveness = 0.17
+randomness = 1.0
+mesh = SubResource("SphereMesh_eeskm")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 18.4
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="SpawnEf" type="CPUParticles3D" parent="MoserSpawner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+mesh = SubResource("CapsuleMesh_m3jco")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="Marker3D" type="Marker3D" parent="MoserSpawner2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59451, 0)
+
+[node name="Timer" type="Timer" parent="MoserSpawner2"]
+autostart = true
+
+[node name="MoserSpawner3" type="Node3D" parent="." node_paths=PackedStringArray("show")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.813278, -2.4323692, 37.962273)
+script = ExtResource("16_hyk0k")
+sceneM = ExtResource("16_hhk27")
+show = NodePath("../Player/CanvasLayer/show")
+
+[node name="CommonEf" type="CPUParticles3D" parent="MoserSpawner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+amount = 128
+explosiveness = 0.17
+randomness = 1.0
+mesh = SubResource("SphereMesh_eeskm")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 18.4
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="SpawnEf" type="CPUParticles3D" parent="MoserSpawner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.281014, 0)
+emitting = false
+amount = 128
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+mesh = SubResource("CapsuleMesh_m3jco")
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+scale_amount_curve = SubResource("Curve_m3jco")
+color_ramp = SubResource("Gradient_65eh5")
+
+[node name="Marker3D" type="Marker3D" parent="MoserSpawner3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59451, 0)
+
+[node name="Timer" type="Timer" parent="MoserSpawner3"]
+autostart = true
+
+[connection signal="pressed" from="Player/CanvasLayer/menu/playButton" to="Player/CanvasLayer" method="_on_play_button_pressed"]
+[connection signal="pressed" from="Player/CanvasLayer/menu/optionsButton" to="Player/CanvasLayer/menu/optionsButton" method="_on_pressed"]
+[connection signal="value_changed" from="Player/CanvasLayer/menu/optionsButton/Panel/Label/HSlider" to="Player/CanvasLayer/menu/optionsButton/Panel/Label" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Player/CanvasLayer/menu/optionsButton/Panel/Label2/musicSlider" to="Player/CanvasLayer/menu/optionsButton/Panel/Label2" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Player/CanvasLayer/menu/optionsButton/Panel/Label3/talkSlider" to="Player/CanvasLayer/menu/optionsButton/Panel/Label3" method="_on_talk_slider_value_changed"]
+[connection signal="timeout" from="MoserSpawner/Timer" to="MoserSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="MoserSpawner2/Timer" to="MoserSpawner2" method="_on_timer_timeout"]
+[connection signal="timeout" from="MoserSpawner3/Timer" to="MoserSpawner3" method="_on_timer_timeout"]

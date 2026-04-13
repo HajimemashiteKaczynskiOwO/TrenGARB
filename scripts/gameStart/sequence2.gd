@@ -28,6 +28,5 @@ func _ready():
 		4:
 			nextLvl = level2
 			
-	print("next level is level " + nextLvl)
 func _on_button_pressed():
 	get_tree().change_scene_to_file(nextLvl)

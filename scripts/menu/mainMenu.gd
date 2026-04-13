@@ -35,7 +35,7 @@ func _ready():
 			continue_button.visible = true
 			play_button.text = "START NEW GAME"
 		3:
-			continue_button.text = "CONTINUE - NIGHT 4"
+			continue_button.text = "PLAY NIGHT 4"
 			continue_button.visible = true
 			play_button.text = "START NEW GAME"
 

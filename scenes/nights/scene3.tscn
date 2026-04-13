@@ -11518,7 +11518,7 @@ collision_mask = 6
 script = ExtResource("97_y387f")
 
 [node name="crossHair" type="TextureRect" parent="CanvasLayer"]
-z_index = 4096
+z_index = 4090
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -11813,6 +11813,7 @@ grow_vertical = 2
 [node name="End" type="Control" parent="CanvasLayer"]
 process_mode = 3
 visible = false
+z_index = 4096
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -55,7 +55,6 @@ func _on_area_3d_body_entered(body):
 
 func interact():
 	if task_name != "Clock in at the computer to start your shift." and task_ui and not task_ui.is_clocked_in():
-		print("Need to clock in first!")
 		noSound.play()
 		return
 		
@@ -88,7 +87,6 @@ func _doingTask() -> void:
 
 	while elapsed < task_duration:
 		if cancel_task:
-			print("❌ Task cancelled")
 			tBar.visible = false
 			is_doing_task = false
 			if player and player.has_method("resume"):
@@ -116,7 +114,6 @@ func _doingTask() -> void:
 		task_ui.add_task("Dispose of the head.")
 		
 	
-	print(task_name + "✅ task complete! Took %.2f seconds." % task_duration)
 	
 	#resume player
 	if player and player.has_method("resume"):

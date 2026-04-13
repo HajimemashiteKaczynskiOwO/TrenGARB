@@ -53,7 +53,7 @@ func _on_video_stream_player_finished():
 	await get_tree().process_frame
 	match nightCheck.night:
 		0:
-			print("Its 0.")
+			pass
 		1:
 			get_tree().paused = false
 			get_tree().change_scene_to_file("res://scenes/minigame/min1.tscn")

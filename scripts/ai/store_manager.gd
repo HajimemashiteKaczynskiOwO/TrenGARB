@@ -48,7 +48,6 @@ func _spawn_random_car_customer():
 				available.append(c)
 
 	if available.is_empty():
-		print("🚫 No idle cars to spawn.")
 		return
 
 	var car = available[rng.randi_range(0, available.size() - 1)]

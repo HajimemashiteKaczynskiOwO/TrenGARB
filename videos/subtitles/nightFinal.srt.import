@@ -1,0 +1,14 @@
+[remap]
+
+importer="frog-subtitles.plugin"
+type="Resource"
+uid="uid://bghmlajq40l17"
+path="res://.godot/imported/nightFinal.srt-c05d42cbfdcd70539b2ae28026b8a8d0.res"
+
+[deps]
+
+source_file="res://videos/subtitles/nightFinal.srt"
+dest_files=["res://.godot/imported/nightFinal.srt-c05d42cbfdcd70539b2ae28026b8a8d0.res"]
+
+[params]
+

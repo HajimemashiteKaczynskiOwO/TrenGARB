@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://cseb71win2g48"]
+[gd_scene load_steps=14 format=4 uid="uid://bugs8t3bfgw6t"]
 
-[ext_resource type="Script" uid="uid://dyt3yh7krlyy1" path="res://testEnemy.gd" id="1_sltdn"]
-[ext_resource type="Texture2D" uid="uid://csfybn3368830" path="res://models/moser/Base Humanoid Mesh/OV1.png" id="2_heqgg"]
-[ext_resource type="Animation" uid="uid://ikjk1yes71iv" path="res://animations/walkANim.res" id="3_h8v4u"]
-[ext_resource type="Animation" uid="uid://cboj6omrqtabf" path="res://animations/IdleANim.res" id="4_hextt"]
-[ext_resource type="Texture2D" uid="uid://kv2c0qa6ktcu" path="res://textures/ui/dark.png" id="5_heqgg"]
+[ext_resource type="Script" uid="uid://c06nge16yjyk2" path="res://intelligence/lobotomy.gd" id="1_me4wg"]
+[ext_resource type="Texture2D" uid="uid://csfybn3368830" path="res://models/moser/Base Humanoid Mesh/OV1.png" id="2_xal2b"]
+[ext_resource type="Animation" uid="uid://cboj6omrqtabf" path="res://animations/IdleANim.res" id="3_0uwkk"]
+[ext_resource type="Animation" uid="uid://ikjk1yes71iv" path="res://animations/walkANim.res" id="4_67i8l"]
+[ext_resource type="Texture2D" uid="uid://kv2c0qa6ktcu" path="res://textures/ui/dark.png" id="5_0g4ho"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xigp5"]
 radius = 0.49267578
@@ -13,7 +13,7 @@ radius = 0.49267578
 resource_name = "Humanoid_Overlapping"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_heqgg")
+albedo_texture = ExtResource("2_xal2b")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bhcy5"]
@@ -144,18 +144,24 @@ bind/33/pose = Transform3D(64.7082, -76.07922, -4.980054, -35.16959, -23.989985,
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0748s"]
 _data = {
-&"IdleANim": ExtResource("4_hextt"),
-&"walkANim": ExtResource("3_h8v4u")
+&"IdleANim": ExtResource("3_0uwkk"),
+&"walkANim": ExtResource("4_67i8l")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_uxbdh"]
 radius = 1.3287698
 
-[node name="CharacterBody3D2" type="CharacterBody3D" node_paths=PackedStringArray("box") groups=["enemy"]]
-transform = Transform3D(0.84, 0, 0, 0, 0.84, 0, 0, 0, 0.84, 0, 0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me4wg"]
+refraction_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xal2b"]
+material = SubResource("StandardMaterial3D_me4wg")
+height = 3.0
+
+[node name="CharacterBody3D2" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07094717, 0)
 floor_constant_speed = true
-script = ExtResource("1_sltdn")
-box = NodePath("Sprite2D")
+script = ExtResource("1_me4wg")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_height_offset = 0.6
@@ -480,6 +486,11 @@ visible = false
 z_index = 4096
 position = Vector2(476.5, 279)
 scale = Vector2(1.953, 1.744)
-texture = ExtResource("5_heqgg")
+texture = ExtResource("5_0g4ho")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6721503, 2.0594058, -2.3841858e-07)
+visible = false
+mesh = SubResource("CapsuleMesh_xal2b")
 
 [connection signal="body_shape_entered" from="Enemy/col_End" to="." method="_on_col_end_body_shape_entered"]

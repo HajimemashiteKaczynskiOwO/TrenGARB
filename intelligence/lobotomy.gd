@@ -3,13 +3,23 @@ extends CharacterBody3D
 @onready var navAgent = $NavigationAgent3D
 @onready var skeleton_3d = $"Enemy/Skeleton3D"
 @onready var animPlayer = $"Enemy/AnimationPlayer"
-@export var box : Sprite2D = null
 @onready var all = $"../../../CanvasLayer"
 
+
+# Optimization
+@onready var caps = $MeshInstance3D
+@onready var enemy = $Enemy
+var mileage = 15
+
+# -----
 var SPEED = 3
 var ROTATION_SPEED = 10.0
 var player = null  
 
+
+func initialize(pos: Vector3):
+	global_position = pos
+	
 func _ready():
 	animPlayer.play("Hunt/IdleANim")
 	
@@ -18,7 +28,6 @@ func _ready():
 	
 
 	call_deferred("setup_navigation")
-
 func setup_navigation():
 	await get_tree().physics_frame
 	player = get_tree().get_first_node_in_group("player")
@@ -41,6 +50,10 @@ func _physics_process(delta):
 	velocity = new_vel
 	move_and_slide()
 	
+	if current_loc.distance_to(navAgent.target_position) < mileage:
+		_optimize()
+	else:
+		_deoptimize()
 	
 	if velocity.length() > 0.1:
 		if animPlayer.current_animation != "Hunt/walkANim":
@@ -58,11 +71,10 @@ func _physics_process(delta):
 func update_target_loc(target_loc) -> void:
 	navAgent.target_position = target_loc
 
-func _on_col_end_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	darkness()
-
-func darkness():
-	all.visible = false
-	box.visible = true
-	await get_tree().create_timer(5.0).timeout
-	get_tree().change_scene_to_file("res://scenes/finalScene.tscn")
+func _optimize():
+	enemy.visible = true
+	caps.visible = false
+	
+func _deoptimize():
+	enemy.visible = false
+	caps.visible = true

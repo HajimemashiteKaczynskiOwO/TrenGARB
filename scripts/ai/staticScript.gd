@@ -25,13 +25,11 @@ var task_done: bool = false
 var player_near: bool = false
 
 func _ready():
-	print("READY:", name)
 	add_to_group("task_objects")  # Add to group so TaskUI can notify us
 	task_ui = get_tree().get_first_node_in_group("task_ui")
 	
 	if task_name == "" and task_ui:
 		task_name = _format_task_name(name)
-		print("Auto-linked task: %s" % task_name)
 	
 
 func _format_task_name(n: String) -> String:
@@ -73,7 +71,6 @@ func _doingTask() -> void:
 
 	while elapsed < task_duration:
 		if cancel_task:
-			print("❌ Scan cancelled")
 			tBar.visible = false
 			is_doing_task = false
 			if player and player.has_method("resume"):
@@ -92,11 +89,9 @@ func _doingTask() -> void:
 	tBar.visible = false
 	is_doing_task = false
 	task_done = true
-	print(task_name + "✅ task complete! Took %.2f seconds." % task_duration)
 	var customer = get_tree().get_first_node_in_group("customer")
 	if customer:
 		customer.waiting_for_player_scan = false
-		print("customer should now be able to leave.")
 	
 	#resume player
 	if player and player.has_method("resume"):
@@ -109,7 +104,6 @@ func _doingTask() -> void:
 
 	# tell ui
 	if task_ui and task_name != "":
-		print("Marking task complete in UI:", task_name)
 		task_ui.mark_task_complete(task_name)
 
 func _hide_interact_prompt():

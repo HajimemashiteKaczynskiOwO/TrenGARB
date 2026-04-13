@@ -3,7 +3,7 @@ extends Node
 
 signal night_changed(night)
 
-var night = 0
+var night = 3
 var fin = 0
 var timePass = false #if 1AM has passed.
 var pleasedCustomer = 0

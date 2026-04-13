@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpg22lth51e8j"
-path.s3tc="res://.godot/imported/Prices.jpg-8e132071f01bbf437dac089eaaeceef5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Prices.jpg-cdbf8e3dd8ec227bfc31e60082938712.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/map/6twelve/textures/Prices.jpg"
-dest_files=["res://.godot/imported/Prices.jpg-8e132071f01bbf437dac089eaaeceef5.s3tc.ctex"]
+source_file="res://models/map/6twelve/Textures/Prices.jpg"
+dest_files=["res://.godot/imported/Prices.jpg-cdbf8e3dd8ec227bfc31e60082938712.s3tc.ctex"]
 
 [params]
 

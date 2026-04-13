@@ -19,22 +19,17 @@ func _on_animation_finished(anim_name):
 
 func _on_area_3d_2_body_entered(body):
 	if ladder_has_fallen and not notAgain:
-		print("Successfully has fallen")
 		notAgain = true
 		_last_stretch()
 	else:
-		print("No.")
-		spawn_character(Vector3(6.8, 0.1, -23))
+		pass
+
 
 ##Killer
 func spawn_character(spawn_position: Vector3):
-	# create instance
+	# create instance, set pos, add to scene
 	var character = character_scene.instantiate()
-	
-	# Set position
 	character.global_position = spawn_position
-	
-	# Add to scene tree
 	add_child(character)
 	
 	return character
@@ -43,4 +38,4 @@ func _last_stretch():
 	await get_tree().create_timer(5.0).timeout
 	bgNoise.stop()
 	chase.play()
-	spawn_character(Vector3(0, 0, 7))
+	spawn_character(Vector3(0, 0, 6.5))

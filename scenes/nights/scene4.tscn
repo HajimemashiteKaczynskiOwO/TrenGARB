@@ -1,4 +1,4 @@
-[gd_scene load_steps=644 format=4 uid="uid://d2mchwm4flsc6"]
+[gd_scene load_steps=645 format=4 uid="uid://d2mchwm4flsc6"]
 
 [ext_resource type="Script" uid="uid://b6phb67h1ctce" path="res://scenes/nights/scene_4.gd" id="1_2iebu"]
 [ext_resource type="Texture2D" uid="uid://calfbqwoeipyo" path="res://models/map/6twelve/Textures/Metal_03.jpg" id="2_5jj5d"]
@@ -8153,7 +8153,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ccle"]
-size = Vector3(2.8295288, 7.450012, 7.498535)
+size = Vector3(1.8968353, 7.450012, 7.498535)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvaup"]
 size = Vector3(6.286934, 3.5426636, 3.233902)
@@ -8277,6 +8277,9 @@ _data = {
 &"Fall": SubResource("Animation_dir2w"),
 &"RESET": SubResource("Animation_1w7hg")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4po5"]
+size = Vector3(1.8632202, 7.4050293, 5.3676147)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_2iebu")
@@ -10255,7 +10258,7 @@ libraries = {
 [node name="StaticBody3D" type="StaticBody3D" parent="Scary/Car82/Car8" index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scary/Car82/Car8/StaticBody3D"]
-transform = Transform3D(1, -1.358913e-13, 5.2840295e-15, 7.087664e-13, 1, 1.1340262e-11, 5.2840914e-15, -2.8137492e-12, 1, 0.056801796, -0.62020874, -3.24927)
+transform = Transform3D(1, -1.358913e-13, 5.284004e-15, 8.1712415e-13, 1, 1.3073986e-11, 5.2840524e-15, -2.8137492e-12, 1, -0.08559704, -0.62020874, -3.2492704)
 shape = SubResource("BoxShape3D_6ccle")
 
 [node name="OutsideNode" type="Node3D" parent="Scary"]
@@ -10293,6 +10296,12 @@ max_distance = 20.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Scary/OutsideNode"]
 stream = ExtResource("127_2iebu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scary/OutsideNode"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scary/OutsideNode/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.302227, 3.2025146, 6.170641)
+shape = SubResource("BoxShape3D_l4po5")
 
 [connection signal="body_shape_entered" from="worldEnv/6twelve/Monitor/interactArea" to="worldEnv/6twelve/Monitor" method="_on_interact_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="worldEnv/6twelve/Monitor/interactArea" to="worldEnv/6twelve/Monitor" method="_on_interact_area_body_shape_exited"]
